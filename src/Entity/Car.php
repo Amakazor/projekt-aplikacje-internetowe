@@ -65,6 +65,11 @@ class Car
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="date_immutable")
+     */
+    private $year;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
@@ -197,6 +202,18 @@ class Car
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getYear(): ?\DateTimeImmutable
+    {
+        return $this->year;
+    }
+
+    public function setYear(\DateTimeImmutable $year): self
+    {
+        $this->year = $year;
 
         return $this;
     }
