@@ -1,2 +1,6 @@
 home:
-  welcome: Siemandero!
+  welcome: Siema!
+
+menu:
+  home: Strona główna
+  login: Moje konto

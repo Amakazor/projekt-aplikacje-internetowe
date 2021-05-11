@@ -2,10 +2,17 @@
 <html lang="pl-PL">
     {{ include('head.html.twig') }}
     <body>
-        {% block body %}
+    <header>
+        {% block menu %}
+                {{ render(controller('App\\Controller\\MenuController:menu')) }}
+        {% endblock %}
+    </header>
+    <main>
+        {% block main %}
             <div>
                 {{ t('home.welcome')|trans }}
             </div>
         {% endblock %}
+    </main>
     </body>
 </html>

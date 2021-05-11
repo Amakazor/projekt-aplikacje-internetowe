@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <ul class="menu">
+        {% for menu_item in menu %}
+            <li class="menuItem">
+                <a class="menuLink" href="{{ path(menu_item.location) }}" title="{{ menu_item.title }}">
+                    {{ menu_item.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
