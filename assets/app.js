@@ -10,10 +10,10 @@ import './styles/reset/reset.scss';
 
 import './styles/global/font.scss';
 import './styles/global/body.scss';
+import './styles/global/header.scss';
 
 import './styles/variables/colors.scss';
 import './styles/variables/transition.scss';
 import './styles/variables/border.scss';
 
-// start the Stimulus application
-import './bootstrap';
+import './styles/modules/menu.scss';
