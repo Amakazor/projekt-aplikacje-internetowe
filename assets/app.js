@@ -7,8 +7,13 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/reset/reset.scss';
-import './styles/variables/colors.scss';
+
+import './styles/global/font.scss';
 import './styles/global/body.scss';
+
+import './styles/variables/colors.scss';
+import './styles/variables/transition.scss';
+import './styles/variables/border.scss';
 
 // start the Stimulus application
 import './bootstrap';
