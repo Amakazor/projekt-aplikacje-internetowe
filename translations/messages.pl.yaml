@@ -4,3 +4,8 @@ home:
 menu:
   home: Strona główna
   login: Moje konto
+  logout: Wyloguj
+  adminPanel: Panel Administracyjny
+  reservation:
+    make: Zarezerwuj
+    check: Rezerwacje

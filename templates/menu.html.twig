@@ -1,11 +1,14 @@
 <nav class="navbar">
+    <div></div>
+    <button type="button" class="menuHamburgerButton HamburgerHandler"><span class="menuHamburgerButtonInside"></span></button>
     <ul class="menu">
         {% for menu_item in menu %}
             <li class="menuItem">
-                <a class="menuLink" href="{{ path(menu_item.location) }}" title="{{ menu_item.title }}">
+                <a class="menuLink menuLink--{{ menu_item.type }}" href="{{ path(menu_item.location) }}" title="{{ menu_item.title }}">
                     {{ menu_item.title }}
                 </a>
             </li>
         {% endfor %}
     </ul>
+
 </nav>
