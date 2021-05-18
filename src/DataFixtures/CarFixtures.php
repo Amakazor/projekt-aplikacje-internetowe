@@ -17,7 +17,6 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $company = $this->getReference('company');
 
         $car = new Car();
-
         $car->setCompany($company);
         $car->setBrand('Volkswagen');
         $car->setModel('Passat B5');
@@ -26,10 +25,21 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
         $car->setimage(' ');
-
         $car->setYear(new DateTimeImmutable('2002-01-01'));
-
         $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear(new DateTimeImmutable('2020-01-01'));
+        $manager->persist($car);
+
         $manager->flush();
     }
 

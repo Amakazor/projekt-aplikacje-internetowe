@@ -22,14 +22,32 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $company = $this->getReference('company');
 
         $user = new User();
-        $user->setUsername('testowy');
-        $user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
+        $user->setUsername('testowy_admin');
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'qwerty'));
         $user->setCompany($company);
         $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
+        $user->setFirstname('admin');
+        $user->setLastname('adminowski');
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername('testowy_user_1');
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'qwerty'));
+        $user->setCompany($company);
+        $user->setRoles(['ROLE_USER']);
         $user->setFirstname('tester');
         $user->setLastname('testowski');
-
         $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername('testowy_user_2');
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'qwerty'));
+        $user->setCompany($company);
+        $user->setRoles(['ROLE_USER']);
+        $user->setFirstname('foo');
+        $user->setLastname('barowski');
+        $manager->persist($user);
+
         $manager->flush();
     }
 
