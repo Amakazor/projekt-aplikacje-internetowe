@@ -31,7 +31,7 @@ class MenuController extends AbstractController
 
             if (in_array("ROLE_ADMIN", $roles)) {
                 $menu_items[] = [
-                    'location' => 'app_index_index',
+                    'location' => 'app_adminpanel_index',
                     'title' => $translator->trans('menu.adminPanel'),
                     'type' => 'underlined',
                 ];
