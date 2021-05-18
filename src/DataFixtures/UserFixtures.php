@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 class UserFixtures extends Fixture
 {
     private $passwordEncoder;
-    public function __construct(Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
