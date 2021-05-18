@@ -22,6 +22,12 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $company = $this->getReference('company');
 
         $user = new User();
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
+=======
+>>>>>>> Stashed changes
         $user->setUsername('testowy');
         $user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
         $user->setCompany($company);
@@ -29,8 +35,21 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setFirstname('tester');
         $user->setLastname('testowski');
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> e116e391f32d4c87b9b8262357e057628b08ed48
+>>>>>>> Stashed changes
         $manager->persist($user);
         $manager->flush();
+        //$user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
+        //$manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [
+            CompanyFixtures::class
+        ];
     }
 
     public function getDependencies()
