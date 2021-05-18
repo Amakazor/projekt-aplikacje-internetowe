@@ -18,8 +18,6 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            login_throttling:
-                max_attempts: 3
             custom_authenticator: App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
@@ -38,3 +36,5 @@ security:
         #- { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/reservarion, roles: ROLE_USER }
         - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/login, roles: PUBLIC_ACCESS}
+        - { path: ^/, roles: PUBLIC_ACCESS}
