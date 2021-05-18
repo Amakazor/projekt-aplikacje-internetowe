@@ -26,10 +26,15 @@ class HamburgerHandler {
 
     constructor(element) {
         this.element = element;
-        this.navbar = this.element.closest('.navbar');
+        this.navbar = this.element.closest('nav');
+
+        this.isOpen = this.navbar.classList.contains('menuOpen');
 
         element.addEventListener('click', this.onClick);
-        document.addEventListener('click', this.onBlur);
+
+        if(element.dataset.autohide) {
+            document.addEventListener('click', this.onBlur);
+        }
     }
 }
 

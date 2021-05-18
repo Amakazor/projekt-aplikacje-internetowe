@@ -9,3 +9,15 @@ menu:
   reservation:
     make: Zarezerwuj
     check: Rezerwacje
+
+admin:
+  title: Panel Administracyjny
+  menu:
+    cars:
+      list: Pojazdy
+      add: Dodaj Pojazd
+    users:
+      list: Pracownicy
+      add: Dodaj Pracownika
+    reservations:
+      list: Rezerwacje

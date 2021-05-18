@@ -1,0 +1,12 @@
+<nav class="adminMenu menuOpen">
+    <button type="button" class="menuAdminHamburgerButton HamburgerHandler"><span class="menuHamburgerButtonInside"><</span></button>
+    <ul class="adminMenu_list">
+        {% for menu_item in menu %}
+            <li class="adminMenu_element">
+                <a class="adminMenu_link {{ menu_item.icon }}" href="{{ path(menu_item.location) }}" title="{{ t(menu_item.title)|trans }}">
+                    {{ t(menu_item.title)|trans }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

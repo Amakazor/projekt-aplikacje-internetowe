@@ -1,0 +1,6 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ t('admin.title')|trans }}{% endblock %}
+{% block main %}
+    {{ render(controller('App\\Controller\\AdminMenuController:menu')) }}
+{% endblock %}

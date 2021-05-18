@@ -1,4 +1,14 @@
 body {
     font-family: 'Open Sans', sans-serif;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
 }
