@@ -8,6 +8,8 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/reset/reset.scss';
 
+import './fonts/icomoon.scss'
+
 import './styles/global/font.scss';
 import './styles/global/body.scss';
 import './styles/global/header.scss';
