@@ -39,7 +39,7 @@ class MenuController extends AbstractController
 
             if (in_array("ROLE_USER", $roles)) {
                 $menu_items[] = [
-                    'location' => 'app_index_index',
+                    'location' => 'app_logout',
                     'title' => $translator->trans('menu.logout'),
                     'type' => 'underlined',
                 ];
@@ -53,7 +53,7 @@ class MenuController extends AbstractController
 
         } else {
             $menu_items[] = [
-                'location' => 'app_index_index',
+                'location' => 'app_login',
                 'title' => $translator->trans('menu.login'),
                 'type' => 'bordered',
             ];
