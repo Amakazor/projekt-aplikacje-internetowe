@@ -7,16 +7,16 @@ use Doctrine\Persistence\ObjectManager;
 class UserFixtures extends Fixture
 {
     private $passwordEncoder;
-    public function __construct(Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
-    $this->passwordEncoder = $passwordEncoder;
-   }
+        $this->passwordEncoder = $passwordEncoder;
+    }
     public function load(ObjectManager $manager)
     {
         // $product = new Product();
         // $manager->persist($product);
 
         $manager->flush();
-       $user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'the_new_password'));
     }
 }

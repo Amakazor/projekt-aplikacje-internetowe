@@ -17,3 +17,6 @@ import './styles/variables/transition.scss';
 import './styles/variables/border.scss';
 
 import './styles/modules/menu.scss';
+import './styles/modules/button.scss';
+
+import './js/handlers/hamburgerHandler.js';
