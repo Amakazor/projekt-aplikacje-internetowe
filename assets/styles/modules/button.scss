@@ -1,10 +1,18 @@
-.przycisk1{
-    background-color:var(--color-primary);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
+.Przycisk1{
+    padding: 15px 50px;
+    border-style: none;
+    margin-top: 50px;
+    background-color: dodgerBlue;
+    border-radius: 20px;
+    box-shadow: 0 0 0 6px white, 0 0 0 12px dodgerBlue;
+    font-size: 40px;
+    font-family: Trebuchet MS;
+    text-transform: uppercase;
+    transition: 1s;
+    cursor: pointer;
+  }
+
+  .Przycisk1:hover {
+    box-shadow: 0 0 0 10px white, 0 0 0 18px dodgerBlue;
+    border-radius: 50px;
+  }
