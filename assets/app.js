@@ -21,7 +21,7 @@ import './styles/variables/border.scss';
 import './styles/modules/menu.scss';
 import './styles/modules/button.scss';
 import './styles/modules/text.scss';
-
+import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
 
 import './js/handlers/hamburgerHandler.js';
