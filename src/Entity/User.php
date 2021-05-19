@@ -53,9 +53,14 @@ class User implements UserInterface
     private $company;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="userId", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="user", orphanRemoval=true)
      */
     private $reservations;
+
+    /**
+     * @ORM\Column(type="string", length=511)
+     */
+    private $email;
 
     public function __construct()
     {
@@ -186,7 +191,7 @@ class User implements UserInterface
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations[] = $reservation;
-            $reservation->setUserId($this);
+            $reservation->setUser($this);
         }
 
         return $this;
@@ -196,10 +201,22 @@ class User implements UserInterface
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getUserId() === $this) {
-                $reservation->setUserId(null);
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

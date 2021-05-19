@@ -35,12 +35,12 @@ class Company
     private $identifier;
 
     /**
-     * @ORM\OneToMany(targetEntity=User::class, mappedBy="companyId", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="company", orphanRemoval=true)
      */
     private $users;
 
     /**
-     * @ORM\OneToMany(targetEntity=Car::class, mappedBy="companyId", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Car::class, mappedBy="company", orphanRemoval=true)
      */
     private $cars;
 
@@ -103,7 +103,7 @@ class Company
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
-            $user->setCompanyId($this);
+            $user->setCompany($this);
         }
 
         return $this;
@@ -113,8 +113,8 @@ class Company
     {
         if ($this->users->removeElement($user)) {
             // set the owning side to null (unless already changed)
-            if ($user->getCompanyId() === $this) {
-                $user->setCompanyId(null);
+            if ($user->getCompany() === $this) {
+                $user->setCompany(null);
             }
         }
 
@@ -133,7 +133,7 @@ class Company
     {
         if (!$this->cars->contains($car)) {
             $this->cars[] = $car;
-            $car->setCompanyId($this);
+            $car->setCompany($this);
         }
 
         return $this;
@@ -143,8 +143,8 @@ class Company
     {
         if ($this->cars->removeElement($car)) {
             // set the owning side to null (unless already changed)
-            if ($car->getCompanyId() === $this) {
-                $car->setCompanyId(null);
+            if ($car->getCompany() === $this) {
+                $car->setCompany(null);
             }
         }
 
