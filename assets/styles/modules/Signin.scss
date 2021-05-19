@@ -70,24 +70,6 @@ body {
       box-shadow: 0 0 0 8px dodgerBlue, 0 0 0 18px var(--color-white);
     }
       
-      
-    
-  .login-box {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    background-color: var(--color-white);
-    width: 400px;
-    -webkit-box-shadow: 0 25px 35px rgba(183, 33, 255, 0.15);
-            box-shadow: 0 25px 35px rgba(183, 33, 255, 0.15);
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 11vh 5vh 7vh;
-    border-radius: 10px;
-  }
   
   .login-box h2 {
     margin: 0 0 0.9vh;
