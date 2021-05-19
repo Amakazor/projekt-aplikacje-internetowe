@@ -51,7 +51,7 @@ class Car
     private $company;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="carId")
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="car")
      */
     private $reservations;
 
@@ -164,7 +164,7 @@ class Car
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations[] = $reservation;
-            $reservation->setCarId($this);
+            $reservation->setCar($this);
         }
 
         return $this;
@@ -174,8 +174,8 @@ class Car
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getCarId() === $this) {
-                $reservation->setCarId(null);
+            if ($reservation->getCar() === $this) {
+                $reservation->setCar(null);
             }
         }
 
