@@ -12,7 +12,7 @@ body {
       transform: translate(-50%, -50%);
       background-color: var(--color-white);
       width: 400px;
-      box-shadow: 0 25px 35px rgba($color-primary, 0.15);
+      box-shadow: 0 25px 35px rgba(var(--color-primary), 0.15);
       text-align: center;
       box-sizing: border-box;
       padding: 11vh 5vh 7vh;
