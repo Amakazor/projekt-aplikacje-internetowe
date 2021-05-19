@@ -28,6 +28,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
         $user->setFirstname('admin');
         $user->setLastname('adminowski');
+        $user->setEmail('test@test.test');
         $manager->persist($user);
 
         $user = new User();
@@ -37,6 +38,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setRoles(['ROLE_USER']);
         $user->setFirstname('tester');
         $user->setLastname('testowski');
+        $user->setEmail('test@test.test');
         $manager->persist($user);
 
         $user = new User();
@@ -46,6 +48,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         $user->setRoles(['ROLE_USER']);
         $user->setFirstname('foo');
         $user->setLastname('barowski');
+        $user->setEmail('test@test.test');
         $manager->persist($user);
 
         $manager->flush();
