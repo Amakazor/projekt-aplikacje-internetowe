@@ -2,9 +2,9 @@
     padding: 15px 50px;
     border-style: none;
     margin-top: 50px;
-    background-color: dodgerBlue;
+    background-color: var(--color-white);
     border-radius: 20px;
-    box-shadow: 0 0 0 6px white, 0 0 0 12px dodgerBlue;
+    box-shadow: 0 0 0 6px var(--color-white), 0 0 0 12px var(--color-primary);
     font-size: 40px;
     font-family: Trebuchet MS;
     text-transform: uppercase;
@@ -13,6 +13,6 @@
   }
 
   .btn btn-lg btn-primary{
-    box-shadow: 0 0 0 10px white, 0 0 0 18px dodgerBlue;
+    box-shadow: 0 0 0 10px var(--color-white), 0 0 0 18px var(--color-primary);
     border-radius: 50px;
   }
