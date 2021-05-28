@@ -66,7 +66,7 @@ class Car
     private $image;
 
     /**
-     * @ORM\Column(type="date_immutable")
+     * @ORM\Column(type="date")
      */
     private $year;
 
@@ -206,12 +206,12 @@ class Car
         return $this;
     }
 
-    public function getYear(): ?\DateTimeImmutable
+    public function getYear(): ?\DateTime
     {
         return $this->year;
     }
 
-    public function setYear(\DateTimeImmutable $year): self
+    public function setYear(\DateTime $year): self
     {
         $this->year = $year;
 
