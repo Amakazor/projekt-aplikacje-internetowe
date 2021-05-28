@@ -1,0 +1,38 @@
+.pagination {
+    display : flex;
+    justify-content : space-between;
+
+    margin-top: 1.5em;
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    .pages {
+        display: flex;
+        justify-content : flex-end;
+
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .page_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 3rem;
+        width: 3rem;
+
+        border: var(--borderStandard) var(--color-primary);
+        border-radius: var(--borderRadiusStandard);
+
+        background: var(--color-white);
+        color: var(--color-primary);
+
+        font-weight: 600;
+
+        &--current {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+    }
+}
