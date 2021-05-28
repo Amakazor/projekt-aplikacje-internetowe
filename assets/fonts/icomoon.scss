@@ -13,19 +13,25 @@
         font-size: 1.5em;
     }
 
-    &.icon-car_add:before {
+    &.icon-car_add::before {
         content: "\e900";
     }
-    &.icon-car:before {
+    &.icon-car::before {
         content: "\e901";
     }
-    &.icon-clock2:before {
+    &.icon-clock2::before {
         content: "\e94f";
     }
-    &.icon-user:before {
+    &.icon-user::before {
         content: "\e971";
     }
-    &.icon-user-plus:before {
+    &.icon-user-plus::before {
         content: "\e973";
+    }
+    &.icon-edit::before {
+        content: "\e992";
+    }
+    &.icon-delete::before {
+        content: "\e9ac";
     }
 }
