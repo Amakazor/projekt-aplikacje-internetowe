@@ -43,7 +43,6 @@ class StylizedSelect {
     };
 
     handleBlur = (element, force = false) => {
-        console.log(element);
         if (force || !this.isOpen || !this.stylizedElement.contains(element)) {
             this.isOpen = false;
             this.onOpenChange();
