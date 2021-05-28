@@ -18,6 +18,7 @@ import './styles/variables/colors.scss';
 import './styles/variables/transition.scss';
 import './styles/variables/border.scss';
 
+import './styles/components/stylizedSelect.scss';
 import './styles/modules/menu.scss';
 import './styles/modules/main.scss';
 import './styles/modules/button.scss';
@@ -25,4 +26,5 @@ import './styles/modules/text.scss';
 import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
 
-import './js/handlers/hamburgerHandler.js';
+import './js/component/stylizedSelect.js';
+import './js/handlers/paginationHandler.js';
