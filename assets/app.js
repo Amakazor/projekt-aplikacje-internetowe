@@ -26,6 +26,7 @@ import './styles/modules/button.scss';
 import './styles/modules/text.scss';
 import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
+import './styles/modules/adminSection.scss';
 
 import './js/component/stylizedSelect.js';
 import './js/handlers/paginationHandler.js';
