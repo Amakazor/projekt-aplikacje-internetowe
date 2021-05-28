@@ -32,6 +32,7 @@ class StylizedSelect {
         this.element.value = this.currentOption.value;
         this.stylizedSelectElement.innerHTML = this.currentOption.innerHTML;
         this.element.dispatchEvent(new Event('change'));
+        this.handleBlur(target, true);
     };
     
     getOptionElement = stylizedOptionElement => {
@@ -80,6 +81,8 @@ class StylizedSelect {
         this.stylizedSelectElement.classList.add("stylized_select_element");
         this.stylizedSelectElement.addEventListener("click", this.onSelectClick);
         this.stylizedElement.appendChild(this.stylizedSelectElement);
+        this.stylizedSelectElement.type = "button";
+
 
         document.addEventListener("keydown", this.onKeyDown);
 
@@ -89,6 +92,7 @@ class StylizedSelect {
 
         this.options.forEach(option => {
             let stylizedOptionElement = document.createElement('button');
+            stylizedOptionElement.type = "button";
             stylizedOptionElement.classList.add("stylized_select__option");
             stylizedOptionElement.innerHTML = option.innerHTML;
             stylizedOptionElement.dataset.value = option.value;
