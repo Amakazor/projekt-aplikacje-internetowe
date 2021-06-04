@@ -1,0 +1,38 @@
+.stylized_upload {
+    border: none;
+    background: transparent;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    cursor: pointer;
+    max-width: 100%;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        .stylized_upload_button {
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+    }
+
+    .stylized_upload_button {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: var(--borderStandard) var(--color-primary);
+        transition: color var(--transitionStandard), background-color var(--transitionStandard);
+        border-radius: var(--borderRadiusStandard);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .stylized_upload_label {
+        align-self: center;
+        padding: 0 1rem;
+        word-break: break-all;
+    }
+}

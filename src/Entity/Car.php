@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CarRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -66,7 +67,7 @@ class Car
     private $image;
 
     /**
-     * @ORM\Column(type="date_immutable")
+     * @ORM\Column(type="date")
      */
     private $year;
 
@@ -206,14 +207,14 @@ class Car
         return $this;
     }
 
-    public function getYear(): ?\DateTimeImmutable
+    public function getYear()
     {
-        return $this->year;
+        return $this->year ? $this->year->format('Y') : 0;
     }
 
-    public function setYear(\DateTimeImmutable $year): self
+    public function setYear(string $year): self
     {
-        $this->year = $year;
+        $this->year = new DateTime($year.'-01-01');
 
         return $this;
     }

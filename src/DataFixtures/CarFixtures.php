@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Car;
 use App\Entity\Company;
+use DateTime;
 use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -25,7 +26,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
         $car->setimage(' ');
-        $car->setYear(new DateTimeImmutable('2002-01-01'));
+        $car->setYear('2002');
         $manager->persist($car);
 
         $car = new Car();
@@ -37,7 +38,127 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setColor('Biały');
         $car->setDescription('Jeszcze ładniejszy samochód');
         $car->setimage(' ');
-        $car->setYear(new DateTimeImmutable('2020-01-01'));
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(' ');
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(' ');
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(' ');
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(' ');
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(' ');
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(' ');
+        $car->setYear('2020');
         $manager->persist($car);
 
         $manager->flush();

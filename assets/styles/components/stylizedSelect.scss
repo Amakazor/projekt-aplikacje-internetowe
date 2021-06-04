@@ -1,0 +1,84 @@
+.stylized_select {
+    position: relative;
+    cursor: pointer;
+
+    .stylized_select_element {
+        position: relative;
+        z-index: 6;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 3rem;
+        min-width: 9rem;
+        padding: 0 1rem;
+
+        border: var(--borderStandard) var(--color-primary);
+        border-radius: var(--borderRadiusStandard);
+
+        background: var(--color-white);
+        color: var(--color-primary);
+
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: left;
+
+        cursor: pointer;
+
+        &::after {
+            display: block;
+            content: "v";
+            transition: transform var(--transitionStandard);
+        }
+
+        &--active {
+            &::after {
+                transform: rotateZ(-180deg);
+            }
+
+            & ~ .stylized_select_optionlist {
+                opacity: 1;
+                pointer-events: auto;
+                border: var(--borderStandard) var(--color-primary);
+                border-radius: var(--borderRadiusStandard);
+                left: 0;
+                right: 0;
+                background: var(--color-white);
+                z-index: 5;
+            }
+        }
+    }
+
+    .stylized_select_optionlist {
+        padding-top: .5rem;
+        margin-top: -.6rem;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transitionStandard);
+    }
+
+    .stylized_select__option {
+        text-align: left;
+        height: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 1rem;
+        transition: color var(--transitionStandard), background-color var(--transitionStandard);
+        border: none;
+        width: 100%;
+        background: var(--color-white);
+        color: var(--color-primary);
+        cursor: pointer;
+
+        &:hover,
+        &:focus-within,
+        &:focus {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+    }
+}
