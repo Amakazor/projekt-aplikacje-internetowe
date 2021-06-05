@@ -33,4 +33,5 @@ import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
 import './js/component/stylizedUpload.js';
 import './js/handlers/paginationHandler.js';
+import './js/handlers/deleteHandler.js';
 import './js/handlers/sortableListSortHandler.js';
