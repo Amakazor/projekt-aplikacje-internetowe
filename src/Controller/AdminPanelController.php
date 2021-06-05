@@ -8,6 +8,7 @@ class AdminPanelController extends AbstractController
 {
     /**
      * @Route("/admin/")
+     * @return Response
      */
     public function index(): Response {
         return $this->render('admin.html.twig', []);
