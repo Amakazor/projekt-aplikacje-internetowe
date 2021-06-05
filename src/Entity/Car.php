@@ -4,12 +4,16 @@ namespace App\Entity;
 
 use App\Repository\CarRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=CarRepository::class)
+ * @Vich\Uploadable
  */
 class Car
 {
@@ -62,9 +66,22 @@ class Car
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=511)
+     * @Vich\UploadableField(mapping="car_image", fileNameProperty="image")
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=511, nullable=true)
+     * @var string|null
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var DateTimeInterface|null
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="date")
@@ -74,6 +91,7 @@ class Car
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->updatedAt = new DateTime('now');
     }
 
     public function getId(): ?int
@@ -195,12 +213,26 @@ class Car
         return $this;
     }
 
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if ($imageFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 

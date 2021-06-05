@@ -21,3 +21,45 @@ admin:
       add: Dodaj Pracownika
     reservations:
       list: Rezerwacje
+  cars:
+    titles:
+      list: Lista pojazdów
+      edit: Edycja / Dodawanie pojazdu
+    list:
+      id: ID
+      image: Zdjęcie
+      brand: Marka
+      model: Model
+      horsepower: Moc
+      engine: Silnik
+      color: Kolor
+      description: Opis
+      year: Rocznik
+      action: Akcje
+  removeImage: Usuń
+
+form:
+  save: Zapisz
+  file:
+    browse: Przeglądaj
+    empty: Nie wybrano pliku
+
+api:
+  message:
+    cars:
+      delete:
+        success: "Pomyślnie usunięto auto o ID "
+        error: "Nie udało się usunąć auta o ID "
+      add:
+        success: "Pomyślnie dodano nowe auto o ID "
+        error: "Nie udało się dodać nowego auta"
+      change:
+        success: "Pomyślnie zmodyfikowano auto o ID "
+        error: "Nie udało się zmodyfikować auta o ID "
+
+sortableList:
+  edit: Edytuj
+  delete: Usuń
+  asc: Rosnąco
+  desc: Malejąco
+  orderBy: Sortuj po

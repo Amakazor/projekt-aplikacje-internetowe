@@ -10,12 +10,12 @@ class AdminMenuController extends AbstractController
         $menu_items = [
             [
                 'icon' => 'icon icon-car',
-                'location' => 'app_adminpanel_index',
+                'location' => 'app_admin_cars',
                 'title' => 'admin.menu.cars.list',
             ],
             [
                 'icon' => 'icon icon-car_add',
-                'location' => 'app_adminpanel_index',
+                'location' => 'app_admin_car',
                 'title' => 'admin.menu.cars.add',
             ],
             [

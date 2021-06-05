@@ -1,0 +1,10 @@
+{% extends "admin.html.twig" %}
+
+{% block adminContent %}
+    <div class="admin_container">
+        <section class="admin_section">
+            <h1>{{ t('admin.cars.titles.edit')|trans }}</h1>
+            {{ form(form, {'attr': {'class': 'adminForm'}}) }}
+        </section>
+    </div>
+{% endblock %}

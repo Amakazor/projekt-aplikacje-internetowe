@@ -1,0 +1,12 @@
+{% extends "admin.html.twig" %}
+
+{% block adminContent %}
+    <div class="admin_container">
+        <section class="admin_section">
+            <h1>{{ t('admin.cars.titles.list')|trans }}</h1>
+            {% include 'pagination.html.twig' with {'base_link': (path('app_admin_cars') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page)} %}
+            {% include 'sortableList.html.twig' with {'translation_base' : 'admin.cars.list', 'data': cars, 'location': 'app_admin_cars', 'edit_location': 'app_admin_car'} %}
+            {% include 'pagination.html.twig' with {'base_link': (path('app_admin_cars') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page), 'variant': 'top'} %}
+        </section>
+    </div>
+{% endblock %}
