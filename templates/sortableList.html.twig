@@ -1,0 +1,51 @@
+<div class="sortable_list">
+    <div class="sortable_list__sorts">
+        <select class="stylizedSelect sortable_list__sort sortable_list__sort--property">
+            {% for field in fields %}
+                {% if field.sortable %}
+                    <option value={{ field.name }} {% if field.name == current_order %}selected{% endif %}>{{ t( translation_base ~ '.' ~ field.name)|trans }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <select class="stylizedSelect sortable_list__sort sortable_list__sort--direction">
+            <option value="ASC" {% if 'ASC' == current_direction %}selected{% endif %}>{{ t("sortableList.asc")|trans }}</option>
+            <option value="DESC" {% if 'DESC' == current_direction %}selected{% endif %}>{{ t("sortableList.desc")|trans }}</option>
+        </select>
+    </div>
+    <div class="sortable_list__table">
+        <div class="sortable_list__row sortable_list__row--header">
+            {% for field in fields %}
+                <div class="sortable_list__field sortable_list__field--header" style="width: {{ field.width }};">
+                    <span>{{ t( translation_base ~ '.' ~ field.name)|trans }}</span>
+                    {% if field.sortable %}
+                        <div class="sortable_list__sort_buttons">
+                            <a tabindex="0" class="sortable_list__sort_button{% if (field.name == current_order and 'ASC'  == current_direction)  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.asc')|trans }}" href="{{ path(location)}}?order={{ field.name }}&direction=ASC&per_page={{ per_page }}">^</a>
+                            <a tabindex="0" class="sortable_list__sort_button{% if (field.name == current_order and 'DESC' == current_direction)  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.desc')|trans }}" href="{{ path(location)}}?order={{ field.name }}&direction=DESC&per_page={{ per_page }}">^</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {% for object in data %}
+            <div class="sortable_list__row" data-id="{{object.id}}">
+                {% for field in fields %}
+                    {% if field.name == 'action' %}
+                        <div class="sortable_list__field sortable_list__field--edit" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: 10%;">
+                            <div class="sortable_list__admin_list_buttons">
+                                <a href="{{ path(edit_location, {'id': object.id}) }}" title="{{ t("sortableList.edit")|trans }}" class="sortable_list__admin_list_button sortable_list__admin_list_button--edit Edit icon icon-edit"></a>
+                                <button title="{{ t("sortableList.delete")|trans }}" class="sortable_list__admin_list_button sortable_list__admin_list_button--delete Delete icon icon-delete" data-location="{{ path( location ~ '_delete', {'id': object.id}) }}"></button>
+                            </div>
+                        </div>
+                    {% elseif field.name == 'image' %}
+                        <div class="sortable_list__field" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: {{ field.width }};">
+                            <a href="{{ object.image }}" download><img src="{{ object.image }}" alt=""></a>
+                        </div>
+                    {% else %}
+                        <div class="sortable_list__field" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: {{ field.width }};">{{ attribute(object, field.name) }}</div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+    </div>
+</div>
