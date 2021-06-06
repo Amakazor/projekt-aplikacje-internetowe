@@ -1,0 +1,94 @@
+.flashes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
+    padding: 1rem;
+
+    .flashes__flash {
+        pointer-events: auto;
+        padding: 1rem 3rem;
+        max-width: 400px;
+        width: 100%;
+        min-height: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        position: relative;
+        opacity: 1;
+        transition: opacity 8000ms;
+
+        border-radius: var(--borderRadiusStandard);
+        border: var(--borderStandard);
+
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+
+        &--success {
+            background: var(--color-flash-success-background);
+            color: var(--color-flash-success);
+            border-color: var(--color-flash-success);
+
+            & .flashes__close_button {
+                background: var(--color-flash-success-background);
+                color: var(--color-flash-success);
+                border-color: var(--color-flash-success);
+            }
+        }
+
+        &--error {
+            background: var(--color-flash-error-background);
+            color: var(--color-flash-error);
+            border-color: var(--color-flash-error);
+
+            & .flashes__close_button {
+                background: var(--color-flash-error-background);
+                color: var(--color-flash-error);
+                border-color: var(--color-flash-error);
+            }
+        }
+
+        &--fading {
+            opacity: 0;
+        }
+    }
+
+    &:hover {
+        .flashes__flash {
+            transition: opacity var(--transitionStandard) !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .flashes__close_button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        border: none;
+        border-left: var(--borderStandard);
+        border-bottom: var(--borderStandard);
+
+        border-bottom-left-radius: var(--borderRadiusStandard);
+
+        font-weight: 700;
+
+        width: 2rem;
+        height: 2rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+    }
+}

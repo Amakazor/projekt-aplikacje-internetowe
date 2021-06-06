@@ -31,6 +31,7 @@ import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
 import './styles/modules/AdminSortableList.scss';
 import './styles/modules/adminSection.scss';
+import './styles/modules/flashes.scss';
 
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
@@ -38,3 +39,4 @@ import './js/component/stylizedUpload.js';
 import './js/handlers/paginationHandler.js';
 import './js/handlers/deleteHandler.js';
 import './js/handlers/sortableListSortHandler.js';
+import './js/handlers/flashesHandler.js';

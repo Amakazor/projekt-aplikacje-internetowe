@@ -2,18 +2,18 @@
 <html lang="pl-PL">
     {{ include('head.html.twig') }}
     <body>
-    <header>
-        {% block menu %}
-                {{ render(controller('App\\Controller\\MenuController:menu')) }}
-        {% endblock %}
-    </header>
-    <main>
-        {% block main %}
-        <div class = "top">
-            <img src="{{asset('build/images/giulia.jpg')}}" title="giulia" alt="giulia">
-        </div>
-           
-        {% endblock %}
-    </main>
+        {{ include('flash.html.twig') }}
+        <header>
+            {% block menu %}
+                    {{ render(controller('App\\Controller\\MenuController:menu')) }}
+            {% endblock %}
+        </header>
+        <main>
+            {% block main %}
+                <div class = "top">
+                    <img src="{{asset('build/images/giulia.jpg')}}" title="giulia" alt="giulia">
+                </div>
+            {% endblock %}
+        </main>
     </body>
 </html>
