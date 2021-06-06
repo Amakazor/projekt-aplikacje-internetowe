@@ -32,7 +32,9 @@
                     {% if field.name == 'action' %}
                         <div class="sortable_list__field sortable_list__field--edit" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: 10%;">
                             <div class="sortable_list__admin_list_buttons">
-                                <a href="{{ path(edit_location, {'id': object.id}) }}" title="{{ t("sortableList.edit")|trans }}" class="sortable_list__admin_list_button sortable_list__admin_list_button--edit Edit icon icon-edit"></a>
+                                {% if edit|default %}
+                                    <a href="{{ path(edit_location, {'id': object.id}) }}" title="{{ t("sortableList.edit")|trans }}" class="sortable_list__admin_list_button sortable_list__admin_list_button--edit Edit icon icon-edit"></a>
+                                {% endif %}
                                 <button title="{{ t("sortableList.delete")|trans }}" class="sortable_list__admin_list_button sortable_list__admin_list_button--delete Delete icon icon-delete" data-location="{{ path( location ~ '_delete', {'id': object.id}) }}"></button>
                             </div>
                         </div>
