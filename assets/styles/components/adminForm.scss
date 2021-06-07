@@ -28,6 +28,7 @@ form.adminForm {
             }
 
             input[type="text"]:not([hidden]),
+            input[type="email"]:not([hidden]),
             textarea {
                 margin: 0;
                 width: 100%;
