@@ -22,6 +22,11 @@ form.adminForm {
                 margin-bottom: 0.25rem;
             }
 
+            ul {
+                list-style: none;
+                color: var(--color-flash-error);
+            }
+
             input[type="text"]:not([hidden]),
             textarea {
                 margin: 0;
