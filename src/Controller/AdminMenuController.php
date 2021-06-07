@@ -20,12 +20,12 @@ class AdminMenuController extends AbstractController
             ],
             [
                 'icon' => 'icon icon-user',
-                'location' => 'app_adminpanel_index',
+                'location' => 'app_admin_users',
                 'title' => 'admin.menu.users.list',
             ],
             [
                 'icon' => 'icon icon-user-plus',
-                'location' => 'app_adminpanel_index',
+                'location' => 'app_admin_user',
                 'title' => 'admin.menu.users.add',
             ],
             [

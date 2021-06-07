@@ -2,8 +2,13 @@
 
 namespace App\Repository;
 
+use App\Entity\Company;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
@@ -24,6 +29,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
+     * @param UserInterface $user
+     * @param string $newEncodedPassword
+     * @throws ORMException
+     * @throws OptimisticLockException
      */
     public function upgradePassword(UserInterface $user, string $newEncodedPassword): void
     {
@@ -36,32 +45,90 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param Company $company
+     * @param int $per_page
+     * @param int $current_page
+     * @param string $order
+     * @param string $direction
+     * @return User[] Returns an array of User objects
+     */
+    public function Pagination(Company $company, $per_page, $current_page, $order, $direction)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->orderBy('user.'.$order, $direction)
+            ->setMaxResults($per_page)
+            ->setFirstResult(($current_page - 1) * $per_page)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?User
+    /**
+     * @param Company $company
+     * @return int
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function paginationCount(Company $company)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->select('count(user.id)')
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getSingleScalarResult();
     }
-    */
+
+    /**
+     * @param Company $company
+     * @param int $id
+     * @return mixed
+     */
+    public function removeCompanyUser(Company $company, int $id)
+    {
+        return $this->createQueryBuilder('user')
+            ->delete()
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('user.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @param Company $company
+     * @param int $id
+     * @return mixed
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function doesUserIdBelongToCompany(Company $company, int $id) {
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('user.id = :id')
+            ->setParameter('id', $id)
+            ->select('count(user.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * @param string $username
+     * @return bool
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function doesUsernameExist(string $username)
+    {
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.username = :username')
+            ->setParameter('username', $username)
+            ->select('count(user.id)')
+            ->getQuery()
+            ->getSingleScalarResult() ? TRUE : FALSE;
+    }
 }
