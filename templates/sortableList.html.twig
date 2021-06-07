@@ -43,7 +43,7 @@
                             <a href="{{ object.image }}" download><img src="{{ object.image }}" alt=""></a>
                         </div>
                     {% else %}
-                        <div class="sortable_list__field" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: {{ field.width }};">{{ attribute(object, field.name) }}</div>
+                        <div class="sortable_list__field" data-label="{{ t( translation_base ~ '.' ~ field.name)|trans }}" style="width: {{ field.width }};">{{ (attribute(object, field.name)|striptags)|replace({'_': '_<wbr>', '@': '@<wbr>'})|raw }}</div>
                     {% endif %}
                 {% endfor %}
 
