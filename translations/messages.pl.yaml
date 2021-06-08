@@ -1,6 +1,22 @@
 home:
   welcome: Siema!
 
+security:
+  goRegister: Nie masz konta? Zarejestruj się
+  goLogin: Masz już konto? Zaloguj się
+  register:
+    user:
+      firstname: Imię
+      lastname: Nazwisko
+      username: Login
+      plainPassword: Hasło
+      email: Adres email
+      company: Dane firmy
+    company:
+      name: Nazwa firmy
+      address: Adres firmy
+      identifier: NIP
+
 menu:
   home: Strona główna
   login: Moje konto
@@ -62,6 +78,7 @@ email:
 
 form:
   save: Zapisz
+  register: Zarejestruj
   file:
     browse: Przeglądaj
     empty: Nie wybrano pliku
@@ -89,6 +106,9 @@ api:
       change:
         success: "Pomyślnie zmodyfikowano pracownika o ID "
         error: "Nie udało się zmodyfikować pracownika o ID "
+    register:
+      success: Pomyślnie utworzono konto użytkownika i firmę
+      error: Nie udało się utworzyć użytkownika oraz firmy
 
 sortableList:
   edit: Edytuj
