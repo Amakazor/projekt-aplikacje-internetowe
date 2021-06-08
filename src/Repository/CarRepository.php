@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Car;
 use App\Entity\Company;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -89,6 +90,25 @@ class CarRepository extends ServiceEntityRepository
             ->andWhere('car.id = :id')
             ->setParameter('id', $id)
             ->select('count(car.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * @param Company $company
+     * @param ReservationRepository $reservationRepository
+     * @return mixed
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function getFree(Company $company, ReservationRepository $reservationRepository)
+    {
+        return $this->createQueryBuilder('car')
+            ->select('count(car.id)')
+            ->andWhere('car.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('car.id NOT IN(:notids)')
+            ->setParameter('notids', array_values($reservationRepository->getCurrentCars($company)))
             ->getQuery()
             ->getSingleScalarResult();
     }

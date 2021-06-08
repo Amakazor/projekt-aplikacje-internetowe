@@ -83,6 +83,24 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * @param Company $company
+     * @return int
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function verifiedCount(Company $company)
+    {
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('user.isVerified = :ver')
+            ->setParameter('ver', '1')
+            ->select('count(user.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * @param Company $company
      * @param int $id
      * @return mixed
      */

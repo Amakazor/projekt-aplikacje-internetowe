@@ -38,6 +38,17 @@ admin:
       add: Dodaj Pracownika
     reservations:
       list: Rezerwacje
+  preview:
+    cars:
+      total: Pojazdy
+      free: Dostępne pojazdy
+    users:
+      total: Pracownicy
+      verified: Zweryfikowani pracownicy
+    reservations:
+      total: Rezerwacje
+      current: Trwające rezerwacje
+      incoming: Nadchodzące rezerwacje
   cars:
     titles:
       list: Lista pojazdów
