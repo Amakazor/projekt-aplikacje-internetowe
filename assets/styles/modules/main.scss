@@ -1,3 +1,71 @@
-.top {
-    background-color: aqua;
+.mainpage {
+    
+}
+.mainpage h1.title
+{
+    font-weight: 700;
+font-size: 5rem;
+line-height: 1.1;
+text-align: center;
+margin-bottom: 4rem;
+}
+.section-about .about-header .about-title {
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.section-about .about-header .about-excerpt {
+    text-align: center;
+    color: rgba(0,0,0,.5);
+    max-width: 76rem;
+    font-size: 1.4rem;
+    margin: 0 auto;
+}
+.section-about-offer .about-offer .number .sign::before {
+    content: "";
+    height: 3px;
+    z-index: 1;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+
+.section-about-offer .about-offer .number .sign::after {
+
+    content: "";
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    box-shadow: 0 3px 50px 0 rgba(0,0,0,.15);
+    border-radius: 1rem;
+
+}
+.section-about-offer .about-offer .number {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-about-offer .about-offer .number .sign::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    box-shadow: 0 3px 50px 0 rgba(0,0,0,.15);
+    border-radius: 1rem;
 }
