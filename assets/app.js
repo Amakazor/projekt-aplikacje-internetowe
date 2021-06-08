@@ -26,7 +26,6 @@ import './styles/components/adminForm.scss';
 import './styles/modules/menu.scss';
 import './styles/modules/main.scss';
 import './styles/modules/button.scss';
-import './styles/modules/login.scss';
 import './styles/modules/text.scss';
 import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
