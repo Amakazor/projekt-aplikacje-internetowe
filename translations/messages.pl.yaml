@@ -1,6 +1,22 @@
 home:
   welcome: Siema!
 
+security:
+  goRegister: Nie masz konta? Zarejestruj się
+  goLogin: Masz już konto? Zaloguj się
+  register:
+    user:
+      firstname: Imię
+      lastname: Nazwisko
+      username: Login
+      plainPassword: Hasło
+      email: Adres email
+      company: Dane firmy
+    company:
+      name: Nazwa firmy
+      address: Adres firmy
+      identifier: NIP
+
 menu:
   home: Strona główna
   login: Moje konto
@@ -11,6 +27,7 @@ menu:
     check: Rezerwacje
 
 admin:
+  removeImage: Usuń
   title: Panel Administracyjny
   menu:
     cars:
@@ -21,3 +38,92 @@ admin:
       add: Dodaj Pracownika
     reservations:
       list: Rezerwacje
+  preview:
+    cars:
+      total: Pojazdy
+      free: Dostępne pojazdy
+    users:
+      total: Pracownicy
+      verified: Zweryfikowani pracownicy
+    reservations:
+      total: Rezerwacje
+      current: Trwające rezerwacje
+      incoming: Nadchodzące rezerwacje
+  cars:
+    titles:
+      list: Lista pojazdów
+      edit: Edycja / Dodawanie pojazdu
+    list:
+      id: ID
+      image: Zdjęcie
+      brand: Marka
+      model: Model
+      horsepower: Moc
+      engine: Silnik
+      color: Kolor
+      description: Opis
+      year: Rocznik
+      action: Akcje
+  users:
+    titles:
+      list: Lista pracowników
+      edit: Edycja / Dodawanie pracownika
+    list:
+      id: ID
+      username: Login
+      firstname: Imię
+      lastname: Nazwisko
+      email: E-mail
+      action: Akcje
+
+email:
+  verifyEmail: Potwierdź swój adres email
+  hello: Witaj
+  registeredIn: Twój email został zarejestrowany w serwisie Rezerwacje Pojazdów
+  confirm: Potwierdź swój adres email klikając w następujący link
+  confirmLink: Potwierdź email
+  expiresIn: Link wygaśnie za
+  login: Twój login to
+  password: Twoje tymczasowe hasło to
+  regards: Obsługa serwisu Rezerwacje Pojazdów
+
+form:
+  save: Zapisz
+  register: Zarejestruj
+  file:
+    browse: Przeglądaj
+    empty: Nie wybrano pliku
+
+api:
+  message:
+    cars:
+      delete:
+        success: "Pomyślnie usunięto auto o ID "
+        error: "Nie udało się usunąć auta o ID "
+      add:
+        success: "Pomyślnie dodano nowe auto o ID "
+        error: "Nie udało się dodać nowego auta"
+      change:
+        success: "Pomyślnie zmodyfikowano auto o ID "
+        error: "Nie udało się zmodyfikować auta o ID "
+    users:
+      delete:
+        success: "Pomyślnie usunięto pracownika o ID "
+        error: "Nie udało się usunąć pracownika o ID "
+        currentError: "Nie instnieje możliwość usunięcia własnego konta"
+      add:
+        success: "Pomyślnie dodano nowego pracownika o ID "
+        error: "Nie udało się dodać nowego pracownika"
+      change:
+        success: "Pomyślnie zmodyfikowano pracownika o ID "
+        error: "Nie udało się zmodyfikować pracownika o ID "
+    register:
+      success: Pomyślnie utworzono konto użytkownika i firmę
+      error: Nie udało się utworzyć użytkownika oraz firmy
+
+sortableList:
+  edit: Edytuj
+  delete: Usuń
+  asc: Rosnąco
+  desc: Malejąco
+  orderBy: Sortuj po

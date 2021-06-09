@@ -1,0 +1,12 @@
+{% block flash %}
+    <div class="flashes">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flashes__flash flashes__flash--{{ label }}">
+                    <button type="button" class="flashes__close_button">X</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

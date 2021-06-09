@@ -1,0 +1,15 @@
+<h1>{{ t('email.hello')|trans }} {{ firstname }} {{ lastname }}</h1>
+
+<p>
+    {{ t('email.registeredIn')|trans }}<br><br>
+    {{ t('email.confirm')|trans }}:
+    <a href="{{ signedUrl }}">{{ t('email.confirmLink')|trans }}</a>.<br>
+    {{ t('email.expiresIn')|trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.<br><br>
+
+    {{ t('email.login')|trans }}: {{ login }}<br>
+    {{ t('email.password')|trans }}: {{ plainPassword }}<br>
+</p>
+
+<p>
+    {{ t('email.regards')|trans }}
+</p>

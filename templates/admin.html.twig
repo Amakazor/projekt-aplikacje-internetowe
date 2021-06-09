@@ -4,5 +4,18 @@
 {% block main %}
     {{ render(controller('App\\Controller\\AdminMenuController:menu')) }}
     {% block adminContent %}
+        <div class="admin_container">
+            <section class="admin_section">
+                <h1>{{ t('admin.title')|trans }}</h1>
+                <div class="stats">
+                    {% for stat in stats %}
+                        <div class="stats__stat">
+                            <div class="stats__number">{{ stat.number }}</div>
+                            <div class="stats__title">{{ t(stat.title)|trans }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
     {% endblock %}
 {% endblock %}

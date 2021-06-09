@@ -1,20 +1,26 @@
 {% block pagination %}
     <div class="pagination">
-        <select name="per_page" class="per_page stylizedSelect">
-            {% for option in [5, 10, 25, 50, 100, 250] %}
+        <select name="per_page" class="per_page stylizedSelect" data-variant="{% if variant|default %}{{ variant }}{% else %}bottom{% endif %}">
+            {% for option in [1, 5, 10, 25, 50, 100, 250] %}
                 <option {% if per_page == option %}selected{% endif %} value="{{ option }}">{{ option }}</option>
             {% endfor %}
         </select>
         {% if pages > 1 %}
                 <div class="pages">
-                    {% if page > 1 %}
-                        <a tabindex="0" href="{{ base_link ~ '&page=' ~ (page - 1) }}" class="page_link"><</a>
+                    {% if page > 2 %}
+                        <a tabindex="0" href="{{ base_link ~ '&page=' ~ 1 }}" class="page_link page_link--end">1</a>
                     {% endif %}
-                    {% for i_page in range(1, pages) %}
+                    {% if page > 3 %}
+                        <div class="page_link page_link--separator">...</div>
+                    {% endif %}
+                    {% for i_page in range(max(1, page - 1), min(page + 1, pages)) %}
                         <a tabindex="0" href="{{ base_link ~ '&page=' ~ i_page }}" class="page_link {% if i_page == page %}page_link--current{% endif %}">{{ i_page }}</a>
                     {% endfor %}
-                    {% if page < pages %}
-                        <a tabindex="0" href="{{ base_link ~ '&page=' ~ (page + 1) }}" class="page_link">></a>
+                    {% if page < pages - 2 %}
+                        <div class="page_link page_link--separator">...</div>
+                    {% endif %}
+                    {% if page < pages - 1 %}
+                        <a tabindex="0" href="{{ base_link ~ '&page=' ~ pages }}" class="page_link page_link--end">{{ pages }}</a>
                     {% endif %}
                 </div>
         {% endif %}

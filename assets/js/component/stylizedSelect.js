@@ -74,7 +74,7 @@ class StylizedSelect {
 
         this.stylizedElement = document.createElement("div");
         this.stylizedElement.classList.add("stylized_select");
-        this.element.parentNode.insertBefore(this.stylizedElement, this.element.nextSibling);
+        this.stylizedElement.classList.add("stylized_select--"+ (this.element.dataset.variant === 'top' ? 'top' : 'bottom'));
 
         this.stylizedSelectElement = document.createElement("button");
         this.stylizedSelectElement.innerHTML = this.currentOption.innerHTML;
@@ -103,6 +103,7 @@ class StylizedSelect {
             stylizedSelectOptionlist.appendChild(stylizedOptionElement);
         });
 
+        this.element.parentNode.insertBefore(this.stylizedElement, this.element.nextSibling);
         document.addEventListener('click', this.onBlur);
     }
 }

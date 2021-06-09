@@ -21,15 +21,23 @@ import './styles/variables/border.scss';
 import './styles/components/pagination.scss';
 import './styles/components/stylizedSelect.scss';
 import './styles/components/stylizedUpload.scss';
+import './styles/components/adminForm.scss';
+
 import './styles/modules/menu.scss';
 import './styles/modules/main.scss';
 import './styles/modules/button.scss';
 import './styles/modules/text.scss';
 import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
+import './styles/modules/AdminSortableList.scss';
 import './styles/modules/adminSection.scss';
+import './styles/modules/flashes.scss';
+import './styles/modules/stats.scss';
 
+import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
 import './js/component/stylizedUpload.js';
 import './js/handlers/paginationHandler.js';
 import './js/handlers/deleteHandler.js';
+import './js/handlers/sortableListSortHandler.js';
+import './js/handlers/flashesHandler.js';

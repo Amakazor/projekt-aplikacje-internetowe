@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+    {{ form(form, {'attr': {'class': 'frontForm'}}) }}
+    <a href="{{ path('app_login') }}">{{ t('security.goLogin')|trans }}</a>
+{% endblock %}

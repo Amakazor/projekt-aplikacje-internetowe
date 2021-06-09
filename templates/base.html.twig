@@ -2,18 +2,121 @@
 <html lang="pl-PL">
     {{ include('head.html.twig') }}
     <body>
-    <header>
-        {% block menu %}
-                {{ render(controller('App\\Controller\\MenuController:menu')) }}
-        {% endblock %}
-    </header>
-    <main>
-        {% block main %}
-        <div class = "top">
-            <img src="{{asset('build/images/giulia.jpg')}}" title="giulia" alt="giulia">
-        </div>
-           
-        {% endblock %}
-    </main>
+        {{ include('flash.html.twig') }}
+        <header>
+            {% block menu %}
+                    {{ render(controller('App\\Controller\\MenuController:menu')) }}
+            {% endblock %}
+        </header>
+        <main>            
+            {% block main %}
+            <div class = "mainpage">
+                    
+                <h1 class="title">
+                    Nasza firma® to największa w Polsce platforma online samochodów.            
+                </h1>
+                <img src="{{asset('build/images/giulia.jpg')}}" title="giulia" alt="giulia">
+                <section class="section-about section-about-offer">
+                    <div class="container-wrapper">
+                        <div class="about-header">
+                            <h1 class="about-title">
+                                Ponad tysiąc modeli w ofercie!
+                            </h1>
+                            <div class="about-excerpt">
+                                            Samochód na abonament to najwygodniejszy sposób wyboru 
+                            nowego pojazdu. Codziennie dodajemy nowe oferty tak aby każdy znalazł 
+                            wersję, która mu odpowiada. W Carsmile w jednym miejscu znajdziesz, 
+                            porównasz i wybierzesz swoje przyszłe auto.
+                            </div>
+                        </div>
+
+                        <div class="about-offer">
+                            <div class="number">
+                                <div class="sign">1</div>
+                                <div class="sign">0</div>
+                                <div class="sign">0</div>
+                                <div class="sign">0</div>
+                            </div>
+                            <div class="caption">samochodów</div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="section-about section-about-body">
+                    <div class="container-wrapper">
+                        <div class="about-header">
+                            <h1 class="about-title">
+                                Każda wersja nadwozia!
+                            </h1>
+                            <div class="about-excerpt">
+                                            Niezależnie czy jesteś firmą, start-upem czy Klientem 
+                            indywidualnym możesz dopasować auto do siebie. Mały, miejski lub duży 
+                            SUV. Rodzinne kombi lub dostawczy furgon. Mamy Twoje przyszłe auto!
+                            </div>
+                        </div>
+
+                        <div class="about-body">
+                            <img src="{{asset('build/images/body-types.png')}}" title="giulia" alt="giulia">
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <section class="section-about section-about-promo">
+                    <div class="container-wrapper">
+                        <div class="row">
+                            <div class="col-12 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="about-promo promo-first">
+                                            <div class="promo-header">
+                                                <div class="promo-badge">Nowość!</div>
+                                                <div class="promo-title">
+                                                    Abonament na auta elektryczne!
+                                                </div>
+                                            </div>
+                                            <div class="promo-image">
+                                                <img src="{{asset('build/images/promo-ev.png')}}" title="giulia" alt="giulia">
+                                            </div>
+                                            <div class="promo-footer">
+                                                <div class="promo-content">
+                                                    Od teraz każda jazda może kosztować 
+                                                    Cię jeszcze mniej. Zebraliśmy najbardziej opłacalne samochody 
+                                                    elektryczne w jednym miejscu!
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="about-promo">
+                                            <div class="promo-header">
+                                                <div class="promo-badge">Nowość!</div>
+                                                <div class="promo-title">
+                                                    Teraz odbierasz swoje auto pod domem!
+                                                </div>
+                                            </div>
+                                            <div class="promo-image">
+                                                <img src="{{asset('build/images/promo-delivery.png')}}" title="giulia" alt="giulia">
+                                            </div>
+                                            <div class="promo-footer">
+                                                <div class="promo-content">
+                                                    Samochód możemy dostarczyć pod Twój dom. Ustal szczegóły z naszym Doradcą.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+              
+            </div>                       
+            {% endblock %}
+        </main>
     </body>
 </html>
