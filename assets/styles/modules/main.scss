@@ -8,6 +8,11 @@ margin-bottom: 4rem;
 margin-top: 10rem;
 position: absolute;
 color: var(--color-white);
+background-color: var(--color-black);
+background-size: auto;
+background-position: center;
+color: transparent;
+text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
 }
 .mainpage .titleimg
 {
@@ -113,19 +118,26 @@ color: var(--color-white);
     margin-bottom: 14rem;
 }
 .container-wrapper {
-    max-width: 100%;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    max-width: 90%;
+    //margin-right: 0.5rem;
+    //margin-left: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+   // width: 10em
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -0.5rem;
-    margin-left: -0.5rem;
+    //margin-right: 0.5rem;
+    //margin-left: 0.5rem;
+    
+
 }
 .col-lg-6 {
     flex: 0 0 50%;
     max-width: 50%;
+    //margin-right: 0.5rem;
+    //margin-left: 0.6rem;
 }
 .section-about-promo .about-promo {
     display: flex;
