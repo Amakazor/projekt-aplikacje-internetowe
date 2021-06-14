@@ -5,10 +5,18 @@ font-size: 4.5rem;
 line-height: 1.1;
 text-align: center;
 margin-bottom: 4rem;
+position: relative;
 }
 .mainpage .titleimg
 {
     margin-bottom: 4rem;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    //position: absolute;
+    display: flex;
 }
 .section-about .about-header .about-title {
     font-weight: 700;
