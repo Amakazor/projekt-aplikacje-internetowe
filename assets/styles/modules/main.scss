@@ -70,15 +70,20 @@ margin-bottom: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     
 }
-.services_free{
-    background-color: green;
+.li_free{
+    text-align: left;
+}
+.li_premium{
+    text-align: left;
+}
+.li_enterprise{
+    text-align: left;
 }
 
 .section-about-body .about-body {
