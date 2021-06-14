@@ -93,16 +93,33 @@ text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
     bottom: 0;
     left: 0;
     right: 0;
-    
+}
+.h3_free{
+    border-bottom: 2px solid #5D88FA;
+    box-sizing: border-box;
+    margin: 1rem 0;
+}
+.h3_premium{
+    border-bottom: 2px solid #5D88FA;
+    box-sizing: border-box;
+    margin: 1rem 0;
+}
+.h3_enterprise{
+    border-bottom: 2px solid #5D88FA;
+    box-sizing: border-box;
+    margin: 1rem 0;
 }
 .li_free{
     text-align: left;
+    margin: 1rem 0;
 }
 .li_premium{
     text-align: left;
+    margin: 1rem 0;
 }
 .li_enterprise{
     text-align: left;
+    margin: 1rem 0;
 }
 
 .section-about-body .about-body {
@@ -173,4 +190,19 @@ text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.services_free{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box; 
+    margin: 1rem 2rem;
+}
+.services_premium{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box;
+    margin: 1rem 2rem;
+}
+.services_enterprise{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box;
+    margin: 1rem 2rem;
 }
