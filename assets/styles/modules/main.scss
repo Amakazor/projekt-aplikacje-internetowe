@@ -90,15 +90,15 @@ color: var(--color-white);
     right: 0;
 }
 .h3_free{
-    border: 2px solid #5D88FA;
+    border-bottom: 2px solid #5D88FA;
     box-sizing: border-box;
 }
 .h3_premium{
-    border: 2px solid #5D88FA;
+    border-bottom: 2px solid #5D88FA;
     box-sizing: border-box;
 }
 .h3_enterprise{
-    border: 2px solid #5D88FA;
+    border-bottom: 2px solid #5D88FA;
     box-sizing: border-box;
 }
 .li_free{
@@ -172,4 +172,16 @@ color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.services_free{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box; 
+}
+.services_premium{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box;
+}
+.services_enterprise{
+    border: 2px solid #5D88FA;
+    box-sizing: border-box;
 }
