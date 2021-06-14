@@ -27,7 +27,7 @@ margin-bottom: 4rem;
     content: "";
     height: 3px;
     z-index: 1;
-    background: #fff;
+    //background: #fff;
     display: block;
     position: absolute;
     top: 50%;
@@ -45,7 +45,7 @@ margin-bottom: 4rem;
     right: 0;
     top: 50%;
     //box-shadow: 0 3px 50px 0 rgba(0,0,0,.15);
-    //border-radius: 1rem;
+    border-radius: 1rem;
 
 }
 .section-about-offer .about-offer .number {
@@ -63,8 +63,8 @@ margin-bottom: 4rem;
     left: 0;
     right: 0;
     top: 50%;
-    box-shadow: 0 3px 50px 0 rgba(0,0,0,.15);
-    border-radius: 1rem;
+    //box-shadow: 0 3px 50px 0 rgba(0,0,0,.15);
+    //border-radius: 1rem;
 }
 .main_services {
     display: flex;
