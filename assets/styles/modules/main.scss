@@ -5,10 +5,20 @@ font-size: 4.5rem;
 line-height: 1.1;
 text-align: center;
 margin-bottom: 4rem;
+margin-top: 10rem;
+position: absolute;
+color: var(--color-white);
 }
 .mainpage .titleimg
 {
     margin-bottom: 4rem;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    //position: absolute;
+    display: flex;
 }
 .section-about .about-header .about-title {
     font-weight: 700;
@@ -115,12 +125,14 @@ margin-bottom: 4rem;
 }
 .container-wrapper {
     max-width: 100%;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -1rem;
-    margin-left: -1rem;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
 }
 .col-lg-6 {
     flex: 0 0 50%;
