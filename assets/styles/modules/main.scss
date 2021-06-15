@@ -1,19 +1,28 @@
 .mainpage h1.title /////////////// to do !!!
 {
-font-weight: 700;
+font-weight: 600;
 font-size: 4.5rem;
 line-height: 1.1;
 text-align: center;
-margin-bottom: 4rem;
-margin-top: 10rem;
+margin-bottom: 5rem;
+margin-top: 25rem;
+margin-left: 5rem;
+margin-right: 5rem;
+padding-bottom: 5rem;
 position: absolute;
-color: var(--color-white);
-background-color: var(--color-black);
+color: var(--color-primary);
+background-color: var(--color-white);
 background-size: auto;
 background-position: center;
-color: transparent;
-text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
+background-image:none;
+//color: transparent;
+//text-shadow: 0 0 5px rgba(27, 31, 34, 0.363);
 }
+.mainpage .blur{
+     
+    //filter: blur(1px);
+}
+  
 .mainpage .titleimg
 {
     margin-bottom: 4rem;
@@ -23,6 +32,7 @@ text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
     right: 0;
     top: 100%;
     display: flex;
+    
 }
 .section-about .about-header .about-title {
     font-weight: 700;
@@ -187,16 +197,23 @@ text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
     left: 0;
     right: 0;
     box-sizing: border-box;
-    
+    //color:var(--color-black);
     
 }
 .main_services li{
     list-style-type:none;
     margin-left: 1rem;
     margin-right: 1rem;
+    //content: "PPP";
+    //list-style-image:'build/images/promo-delivery.png';
+    //list-style-image: url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
 }
+
 .main_services h3{
     font-size: 2rem;
+}
+.main_services h2{
+    color:var(--color-black);
 }
 .services_free{
     border: 2px solid #5D88FA;   
@@ -213,4 +230,42 @@ text-shadow: 0 0 5px rgba(6, 68, 104, 0.671);
     border: 2px solid #5D88FA;
     box-sizing: border-box;
     margin: 1rem 2rem;
+}
+.button_premium{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #fa4a4e;
+    border: 1px solid #fa4a4e;
+    padding: .8rem 2rem .5rem;
+    line-height: 1;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+}
+.button_enterprise{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #fa4a4e;
+    border: 1px solid #fa4a4e;
+    padding: .8rem 2rem .5rem;
+    line-height: 1;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+}
+.button_free{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #228B22;
+    border: 1px solid #228B22;
+    padding: .8rem 2rem .5rem;
+    line-height: 1;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+}
+
+.foot{
+    padding: 1rem 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;   
+    border-top: var(--borderStandard) var(--color-primary);
 }
