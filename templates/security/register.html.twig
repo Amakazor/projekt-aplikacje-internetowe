@@ -3,7 +3,8 @@
 {% block title %}Register{% endblock %}
 
 {% block main %}
-<div class='login__container'>
+<div class='register_main_bg'>
+<div class='register_main'>
     {{ form(form, {'attr': {'class': 'frontForm'}}) }}
-    <a href="{{ path('app_login') }}">{{ t('security.goLogin')|trans }}</a></div>
+    <a href="{{ path('app_login') }}">{{ t('security.goLogin')|trans }}</a></div></div>
 {% endblock %}

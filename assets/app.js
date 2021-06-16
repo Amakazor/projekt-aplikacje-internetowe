@@ -33,6 +33,8 @@ import './styles/modules/AdminSortableList.scss';
 import './styles/modules/adminSection.scss';
 import './styles/modules/flashes.scss';
 import './styles/modules/stats.scss';
+import './styles/modules/registerform.scss';
+
 
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';

@@ -1,0 +1,97 @@
+.register_main_bg{
+width: 100%;  
+background-image: -webkit-gradient(linear, left bottom, left top, from(#f3e7e9), color-stop(99%, #e3eeff), to(#e3eeff));
+background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+//justify-content:space-between;
+}
+.register_main{
+
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+width: 400px;
+box-shadow: 0 25px 35px rgba(183, 33, 255, 0.15);
+//text-align: center;
+//box-sizing: border-box;
+padding: 11vh 5vh 7vh;
+border-radius: 50px;
+margin-top: 1rem;
+//justify-content:space-between;
+}
+.register_main a{
+    text-decoration: none;
+font-weight: 600;
+color: #b721ff;
+transition: color 200ms;
+}
+.register_main button{
+padding: 0.1rem 0.6rem;
+border-style: none;
+margin-top: 3rem;
+margin-bottom: 1.2rem;
+background-color: dodgerBlue;
+border-radius: 1rem;
+box-shadow: 0 0 0 6px white, 0 0 0 12px dodgerBlue;
+font-size: 1.2rem;
+text-transform: uppercase;
+transition: 1s;
+cursor: pointer;
+color: var(--color-white);
+//position: absolute;
+
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.register_main  label.required {
+    box-sizing: border-box;
+    //margin: 5;
+    //padding: 0;
+    //width: 50%;
+    
+    /////display: flex;
+    //align-items: center
+    //display: block;
+    left: auto;
+    //position: absolute;
+    margin: 0.5rem;
+    justify-content:flex-start;
+}
+.register_main  div {
+    
+    //margin: 5;
+    //padding: 0;
+    //width: 50%;
+    text-align:left;
+   
+}
+.register_main div#registration_form.frontForm label {
+    //margin: 0.5rem;
+    //left: auto;
+    //position: absolute;
+    //display: flex;
+    //display: flex;
+  //justify-content: flex-start;
+  //justify-content:flex-start;
+}
+.register_main input{
+//width: 50%;
+border-radius: 10px;
+margin: 0.5rem;
+box-shadow: 0 0 0 3px dodgerBlue, 0 0 0 12px white;
+outline: none;
+padding: 0.2rem;
+//box-sizing: border-box;
+transition: 0.3s;
+position:static;
+//text-align:left;
+//margin-left: auto;
+//margin-right: auto;
+//right: 70%;
+//display: flex;
+//display: flex;
+//justify-content:flex-end;
+//justify-content:space-between;
+}
+
