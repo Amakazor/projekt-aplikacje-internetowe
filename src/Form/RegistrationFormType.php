@@ -41,7 +41,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('company', RegisterCompanyType::class, [
                 'required' => TRUE,
-                'label' => 'security.register.user.company'
+                'label' => ' '
             ])
         ;
     }
