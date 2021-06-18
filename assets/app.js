@@ -22,6 +22,7 @@ import './styles/components/pagination.scss';
 import './styles/components/stylizedSelect.scss';
 import './styles/components/stylizedUpload.scss';
 import './styles/components/stylizedNumber.scss';
+import './styles/components/stylizedDate.scss';
 import './styles/components/adminForm.scss';
 
 import './styles/modules/menu.scss';
@@ -40,6 +41,7 @@ import './styles/modules/registerform.scss';
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
 import './js/component/stylizedUpload.js';
+import './js/component/stylizedDate.js';
 import './js/handlers/paginationHandler.js';
 import './js/handlers/deleteHandler.js';
 import './js/handlers/sortableListSortHandler.js';
