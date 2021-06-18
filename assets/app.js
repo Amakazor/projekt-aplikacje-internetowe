@@ -21,6 +21,7 @@ import './styles/variables/border.scss';
 import './styles/components/pagination.scss';
 import './styles/components/stylizedSelect.scss';
 import './styles/components/stylizedUpload.scss';
+import './styles/components/stylizedNumber.scss';
 import './styles/components/adminForm.scss';
 
 import './styles/modules/menu.scss';

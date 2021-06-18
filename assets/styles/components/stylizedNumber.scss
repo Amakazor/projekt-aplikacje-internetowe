@@ -1,0 +1,36 @@
+.stylized_number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--color-primary);
+
+    &__text {
+        min-width: 7ch;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: inherit;
+    }
+
+    &__increment,
+    &__decrement {
+        color: inherit;
+        border: none;
+        background: none;
+        font-size: 1.7rem;
+        cursor: pointer;
+        position: relative;
+        transition: padding-left var(--transitionStandard), padding-right var(--transitionStandard), margin-left var(--transitionStandard), margin-right var(--transitionStandard);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__increment:hover {
+        padding-left: 1rem;
+        margin-right: -1rem;
+    }
+
+    &__decrement:hover {
+        margin-left: -1rem;
+        padding-right: 1rem;
+    }
+}
