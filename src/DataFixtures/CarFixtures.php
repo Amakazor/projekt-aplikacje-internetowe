@@ -25,7 +25,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9 TDI');
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2002');
         $manager->persist($car);
 
@@ -49,7 +49,31 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9 TDI');
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
+        $car->setYear('2002');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Audi');
+        $car->setModel('A4 B9');
+        $car->setHorsepower('149');
+        $car->setEngine('1.9');
+        $car->setColor('Biały');
+        $car->setDescription('Jeszcze ładniejszy samochód');
+        $car->setimage(null);
+        $car->setYear('2020');
+        $manager->persist($car);
+
+        $car = new Car();
+        $car->setCompany($company);
+        $car->setBrand('Volkswagen');
+        $car->setModel('Passat B5');
+        $car->setHorsepower('101');
+        $car->setEngine('1.9 TDI');
+        $car->setColor('Czarny');
+        $car->setDescription('Bardzo ładny samochód');
+        $car->setimage(null);
         $car->setYear('2002');
         $manager->persist($car);
 
@@ -73,7 +97,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9 TDI');
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2002');
         $manager->persist($car);
 
@@ -85,7 +109,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9');
         $car->setColor('Biały');
         $car->setDescription('Jeszcze ładniejszy samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2020');
         $manager->persist($car);
 
@@ -97,7 +121,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9 TDI');
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2002');
         $manager->persist($car);
 
@@ -109,7 +133,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9');
         $car->setColor('Biały');
         $car->setDescription('Jeszcze ładniejszy samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2020');
         $manager->persist($car);
 
@@ -121,7 +145,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9 TDI');
         $car->setColor('Czarny');
         $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2002');
         $manager->persist($car);
 
@@ -133,31 +157,7 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
         $car->setEngine('1.9');
         $car->setColor('Biały');
         $car->setDescription('Jeszcze ładniejszy samochód');
-        $car->setimage(' ');
-        $car->setYear('2020');
-        $manager->persist($car);
-
-        $car = new Car();
-        $car->setCompany($company);
-        $car->setBrand('Volkswagen');
-        $car->setModel('Passat B5');
-        $car->setHorsepower('101');
-        $car->setEngine('1.9 TDI');
-        $car->setColor('Czarny');
-        $car->setDescription('Bardzo ładny samochód');
-        $car->setimage(' ');
-        $car->setYear('2002');
-        $manager->persist($car);
-
-        $car = new Car();
-        $car->setCompany($company);
-        $car->setBrand('Audi');
-        $car->setModel('A4 B9');
-        $car->setHorsepower('149');
-        $car->setEngine('1.9');
-        $car->setColor('Biały');
-        $car->setDescription('Jeszcze ładniejszy samochód');
-        $car->setimage(' ');
+        $car->setimage(null);
         $car->setYear('2020');
         $manager->persist($car);
 

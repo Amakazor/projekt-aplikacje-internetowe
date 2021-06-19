@@ -76,6 +76,23 @@ admin:
       email: E-mail
       action: Akcje
 
+reservation:
+  title: Zarezerwuj auto na wybrany termin
+  found: "Liczba znalezionych aut wynosi: "
+  reserve: Zarezerwuj
+  cars:
+    horsepower: Moc
+    engine: Silnik
+    color: Kolor
+    year: Rocznik
+  carsAmount:
+    zero: Nie znaleziono aut.
+  form:
+    date:
+      start: Data początku rezerwacji
+      end: Data końca rezerwacji
+      error: Początek rezerwacji musi być wcześniej, niż jej koniec
+
 email:
   verifyEmail: Potwierdź swój adres email
   hello: Witaj
@@ -89,6 +106,7 @@ email:
 
 form:
   save: Zapisz
+  search: Szukaj
   register: Zarejestruj
   file:
     browse: Przeglądaj
@@ -120,6 +138,10 @@ api:
     register:
       success: Pomyślnie utworzono konto użytkownika i firmę
       error: Nie udało się utworzyć użytkownika oraz firmy
+    reservation:
+      create:
+        success: Pomyślnie dokonano rezerwacji.
+        error: Nie udało się dokonać rezerwacji, auto jest niedostępne w tym terminie.
 
 sortableList:
   edit: Edytuj

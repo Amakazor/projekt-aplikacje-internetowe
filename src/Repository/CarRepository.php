@@ -9,6 +9,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 
 /**
  * @method Car|null find($id, $lockMode = null, $lockVersion = null)
@@ -108,21 +109,27 @@ class CarRepository extends ServiceEntityRepository
             ->andWhere('car.company = :val')
             ->setParameter('val', $company)
             ->andWhere('car.id NOT IN(:notids)')
-            ->setParameter('notids', array_values($reservationRepository->getCurrentCars($company)))
+            ->setParameter('notids', array_values($reservationRepository->getCurrentCars($company) + ['safety' => 0]))
             ->getQuery()
             ->getSingleScalarResult();
     }
 
-
-    /*
-    public function findOneBySomeField($value): ?Car
+    /**
+     * @param Company $company
+     * @param ReservationRepository $reservationRepository
+     * @param DateTime $start
+     * @param DateTime $end
+     * @return Car[]
+     * @throws Exception
+     */
+    public function getFreeBetweenDates(Company $company, ReservationRepository $reservationRepository, DateTime $start, DateTime $end)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('car')
+            ->andWhere('car.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('car.id NOT IN(:notids)')
+            ->setParameter('notids', array_values($reservationRepository->getCarsReservedBetweenDates($company, $start, $end)) + ['safety' => 0])
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
 }

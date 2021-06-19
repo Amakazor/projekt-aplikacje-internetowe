@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="admin_container reserve">
+        <section class="admin_section">
+            <h1>{{ t('reservation.title')|trans }}</h1>
+            {{ form(form, {'attr': {'class': 'adminForm reserveForm'}}) }}
+        </section>
+        {% if formValid %}
+            <section class="admin_section">
+                <h2>
+                    {% if cars|length > 0 %}
+                        {{ t('reservation.found')|trans ~ ' ' ~  cars|length}}
+                    {% else %}
+                        {{ t('reservation.carsAmount.zero')|trans }}
+                    {% endif %}
+                </h2>
+                <div class="cars">
+                    {% for car in cars %}
+                        <div class="cars__car">
+                            <div class="cars__title">{{ car.brand}} {{ car.model }}</div>
+                            <div class="cars__information">
+                                {% if car.hasImage|default %}
+                                    <img src="{{ vich_uploader_asset(car) }}" alt="{{ car.brand }} {{ car.model }}" class="cars__image">
+                                {% endif %}
+                                <div class="cars__informationContainer">
+                                    <div class="cars__info"><span class="cars__label">{{ t('reservation.cars.horsepower')|trans }}: </span>{{ car.horsepower }}</div>
+                                    <div class="cars__info"><span class="cars__label">{{ t('reservation.cars.engine')|trans }}: </span>{{ car.engine }}</div>
+                                    <div class="cars__info"><span class="cars__label">{{ t('reservation.cars.color')|trans }}: </span>{{ car.color }}</div>
+                                    <div class="cars__info"><span class="cars__label">{{ t('reservation.cars.year')|trans }}: </span>{{ car.year }}</div>
+                                </div>
+                            </div>
+                            <div class="cars__description">{{ car.description}}</div>
+                            <a class="cars__button" href="{{ path('app_reserve_id', {'id': car.id, 'start': start, 'end': end}) }}">{{ t('reservation.reserve')|trans }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}

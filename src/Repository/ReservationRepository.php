@@ -90,4 +90,26 @@ class ReservationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * @param Company $company
+     * @param DateTime $start
+     * @param DateTime $end
+     * @return int[]
+     * @throws Exception
+     */
+    public function getCarsReservedBetweenDates(Company $company, DateTime $start, DateTime $end)
+    {
+        return $this->createQueryBuilder('reservation')
+            ->join('reservation.user', 'u')
+            ->join('reservation.car', 'c')
+            ->Where('u.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('(reservation.start <= :start AND reservation.end >= :end) OR (reservation.start BETWEEN :start AND :end AND reservation.end >= :end) OR (reservation.end BETWEEN :start AND :end AND reservation.start <= :start)')
+            ->setParameter('start', $start)
+            ->setParameter('end', $end)
+            ->select('c.id')
+            ->getQuery()
+            ->getResult();
+    }
 }

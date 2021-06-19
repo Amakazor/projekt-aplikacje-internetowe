@@ -140,6 +140,11 @@ class Car
         return $this->engine;
     }
 
+    public function getHasImage(): bool
+    {
+        return !empty($this->image);
+    }
+
     public function setEngine(string $engine): self
     {
         $this->engine = $engine;

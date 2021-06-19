@@ -17,7 +17,7 @@ class MenuController extends AbstractController
 
             if (in_array("ROLE_USER", $roles)) {
                 $menu_items[] = [
-                    'location' => 'app_index_index',
+                    'location' => 'app_reserve',
                     'title' => $translator->trans('menu.reservation.make'),
                     'type' => 'underlined',
                 ];
