@@ -1,0 +1,21 @@
+{% extends "user.html.twig" %}
+{% block userContent %}
+    <div class="admin_container">
+        <section class="admin_section">
+            <h1>{{ t('user.data.title')|trans }}</h1>
+            <div class="data">
+                <div class="data__column">
+                    <h2>{{ t('user.data.subtitle')|trans }}</h2>
+                    <div class="data__row"><span class="data__label">{{ t('user.data.list.firstname')|trans }}: </span>{{ user.firstname }}</div>
+                    <div class="data__row"><span class="data__label">{{ t('user.data.list.lastname')|trans }}: </span>{{ user.lastname }}</div>
+                    <div class="data__row"><span class="data__label">{{ t('user.data.list.username')|trans }}: </span>{{ user.username }}</div>
+                    <div class="data__row"><span class="data__label">{{ t('user.data.list.email')|trans }}: </span>{{ user.email }}</div>
+                </div>
+                <div class="data__column">
+                    <h2>{{ t('user.data.password.change')|trans }}</h2>
+                    {{ form(form) }}
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

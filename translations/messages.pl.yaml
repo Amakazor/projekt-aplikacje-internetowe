@@ -76,6 +76,28 @@ admin:
       email: E-mail
       action: Akcje
 
+user:
+  data:
+    title: Moje dane
+    subtitle: Dane użytkownika
+    list:
+      username: Login
+      email: E-mail
+      firstname: Imię
+      lastname: Nazwisko
+    password:
+      old: Poprzednie hasło
+      new: Nowe hasło
+      repeat: Powtórz hasło
+      change: Zmień hasło
+    error:
+      samePassword: Nowe hasło nie może być takie samo jak poprzednie
+      passwordOldWrong: Niepoprawne stare hasło
+      passwordNotMatching: Nowe hasło nie jest takie samo w obu polach
+  menu:
+    data: Moje dane
+    reservations: Moje rezerwacje
+
 reservation:
   title: Zarezerwuj auto na wybrany termin
   found: "Liczba znalezionych aut wynosi: "
@@ -152,6 +174,9 @@ api:
       create:
         success: Pomyślnie dokonano rezerwacji.
         error: Nie udało się dokonać rezerwacji, auto jest niedostępne w tym terminie.
+    password:
+      change:
+        success: Hasło zostało zmienione pomyślnie.
 
 sortableList:
   edit: Edytuj

@@ -45,7 +45,7 @@ class MenuController extends AbstractController
                 ];
 
                 $menu_items[] = [
-                    'location' => 'app_index_index',
+                    'location' => 'app_user_data',
                     'title' => $translator->trans('menu.login'),
                     'type' => 'bordered',
                 ];

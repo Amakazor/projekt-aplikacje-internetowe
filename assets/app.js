@@ -38,6 +38,7 @@ import './styles/modules/stats.scss';
 import './styles/modules/registerform.scss';
 import './styles/modules/reserve.scss';
 import './styles/modules/reservations.scss';
+import './styles/modules/userData.scss';
 
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
