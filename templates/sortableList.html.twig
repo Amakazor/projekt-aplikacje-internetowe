@@ -3,7 +3,7 @@
         <select class="stylizedSelect sortable_list__sort sortable_list__sort--property">
             {% for field in fields %}
                 {% if field.sortable %}
-                    <option value={{ field.name }} {% if field.name == current_order %}selected{% endif %}>{{ t( translation_base ~ '.' ~ field.name)|trans }}</option>
+                    <option {% if field.sort|default %} value="{{ field.sort }}" {% if field.sort == current_order %}selected{% endif %} {% else %} value="{{ field.name }}" {% if field.name == current_order %}selected{% endif %} {% endif %}>{{ t( translation_base ~ '.' ~ field.name)|trans }}</option>
                 {% endif %}
             {% endfor %}
         </select>
@@ -19,8 +19,8 @@
                     <span>{{ t( translation_base ~ '.' ~ field.name)|trans }}</span>
                     {% if field.sortable %}
                         <div class="sortable_list__sort_buttons">
-                            <a tabindex="0" class="sortable_list__sort_button{% if (field.name == current_order and 'ASC'  == current_direction)  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.asc')|trans }}" href="{{ path(location)}}?order={{ field.name }}&direction=ASC&per_page={{ per_page }}">^</a>
-                            <a tabindex="0" class="sortable_list__sort_button{% if (field.name == current_order and 'DESC' == current_direction)  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.desc')|trans }}" href="{{ path(location)}}?order={{ field.name }}&direction=DESC&per_page={{ per_page }}">^</a>
+                            <a tabindex="0" class="sortable_list__sort_button{% if (((field.name == current_order) or ((field.sort|default) and (field.sort == current_order))) and ('ASC'  == current_direction))  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.asc')|trans }}" href="{{ path(location)}}?order={% if field.sort|default %}{{ field.sort }}{% else %}{{ field.name }}{% endif %}&direction=ASC&per_page={{ per_page }}">^</a>
+                            <a tabindex="0" class="sortable_list__sort_button{% if (((field.name == current_order) or ((field.sort|default) and (field.sort == current_order))) and ('DESC' == current_direction))  %} sortable_list__sort_button--active {% endif %}" title="{{ t('sortableList.orderBy')|trans }} {{ t( translation_base ~ '.' ~ field.name)|trans }} {{ t('sortableList.desc')|trans }}" href="{{ path(location)}}?order={% if field.sort|default %}{{ field.sort }}{% else %}{{ field.name }}{% endif %}&direction=DESC&per_page={{ per_page }}">^</a>
                         </div>
                     {% endif %}
                 </div>
