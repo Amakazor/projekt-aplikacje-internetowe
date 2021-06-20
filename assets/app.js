@@ -37,6 +37,7 @@ import './styles/modules/flashes.scss';
 import './styles/modules/stats.scss';
 import './styles/modules/registerform.scss';
 import './styles/modules/reserve.scss';
+import './styles/modules/reservations.scss';
 
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';
@@ -46,3 +47,4 @@ import './js/handlers/paginationHandler.js';
 import './js/handlers/deleteHandler.js';
 import './js/handlers/sortableListSortHandler.js';
 import './js/handlers/flashesHandler.js';
+import './js/handlers/reservationsFiltersHandler.js';

@@ -23,7 +23,7 @@ class MenuController extends AbstractController
                 ];
 
                 $menu_items[] = [
-                    'location' => 'app_index_index',
+                    'location' => 'app_reservations',
                     'title' => $translator->trans('menu.reservation.check'),
                     'type' => 'underlined',
                 ];

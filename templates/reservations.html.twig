@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="admin_container">
+        <section class="admin_section">
+            <h1>{{ t('reservations.title')|trans }}</h1>
+            {% include 'pagination.html.twig' with {'base_link': (path('app_reservations') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page ~ '&user=' ~ (currentUser|default ? currentUser.fullname : '') ~ '&car=' ~ (currentCar|default ? currentCar.fullname : ''))} %}
+            <div class="reservations__sorts">
+                <select name="user" class="reservations__user stylizedSelect" data-variant="{% if variant|default %}{{ variant }}{% else %}bottom{% endif %}">
+                    <option {% if currentUser == 'all' %}selected{% endif %} value="all">{{ t('reservations.allUsers')|trans }}</option>
+                    {% for user in users %}
+                        <option {% if currentUser == user %}selected{% endif %} value="{{ user.id }}">{{ user.fullname }}</option>
+                    {% endfor %}
+                </select>
+                <select name="car" class="reservations__car stylizedSelect" data-variant="{% if variant|default %}{{ variant }}{% else %}bottom{% endif %}">
+                    <option {% if currentCar == 'all' %}selected{% endif %} value="all">{{ t('reservations.allCars')|trans }}</option>
+                    {% for car in cars %}
+                        <option {% if currentCar == car %}selected{% endif %} value="{{ car.id }}">{{ car.fullname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% include 'sortableList.html.twig' with {'translation_base' : 'reservations.list', 'data': reservations, 'location': 'app_reservations', 'edit': false} %}
+            {% include 'pagination.html.twig' with {'base_link': (path('app_reservations') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page ~ '&user=' ~ (currentUser|default ? currentUser.fullname : '') ~ '&car=' ~ (currentCar|default ? currentCar.fullname : '')), 'variant': 'top'} %}
+        </section>
+    </div>
+{% endblock %}

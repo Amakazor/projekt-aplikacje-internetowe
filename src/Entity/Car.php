@@ -123,6 +123,11 @@ class Car
         return $this;
     }
 
+    public function getFullname(): ?string
+    {
+        return $this->getBrand() . ' ' . $this->getModel();
+    }
+
     public function getHorsepower(): ?int
     {
         return $this->horsepower;

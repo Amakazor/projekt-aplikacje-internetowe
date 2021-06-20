@@ -93,6 +93,16 @@ reservation:
       end: Data końca rezerwacji
       error: Początek rezerwacji musi być wcześniej, niż jej koniec
 
+reservations:
+  title: Wszystkie rezerwacje
+  allUsers: Wszyscy pracownicy
+  allCars: Wszystkie auta
+  list:
+    start: Początek
+    end: Koniec
+    car: Auto
+    user: Pracownik
+
 email:
   verifyEmail: Potwierdź swój adres email
   hello: Witaj
