@@ -75,6 +75,8 @@ admin:
       lastname: Nazwisko
       email: E-mail
       action: Akcje
+  reservations:
+    title: Rezerwacje
 
 user:
   reservations:
