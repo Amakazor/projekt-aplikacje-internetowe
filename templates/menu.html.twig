@@ -4,6 +4,9 @@
     <ul class="menu">
         {% for menu_item in menu %}
             <li class="menuItem">
+                <a class="menuLink menuLink--{{ menu_item.type }}" href="/symfony24/public/index.php"> Strona Główna</a>
+            </li>
+            <li class="menuItem">
                 <a class="menuLink menuLink--{{ menu_item.type }}" href="{{ path(menu_item.location) }}" title="{{ menu_item.title }}">
                     {{ menu_item.title }}
                 </a>
