@@ -240,6 +240,7 @@ background-position: center;
     line-height: 1;
     border-radius: .5rem;
     margin-bottom: 2rem;
+    text-decoration:line-through;
 }
 .button_enterprise{
     font-size: 1.2rem;
@@ -250,6 +251,7 @@ background-position: center;
     line-height: 1;
     border-radius: .5rem;
     margin-bottom: 2rem;
+    text-decoration:line-through;
 }
 .button_free{
     font-size: 1.2rem;
@@ -261,7 +263,9 @@ background-position: center;
     border-radius: .5rem;
     margin-bottom: 2rem;
 }
-
+.a_free{
+    color: #228B22;
+}
 .foot{
     padding: 1rem 1rem;
     display: flex;
