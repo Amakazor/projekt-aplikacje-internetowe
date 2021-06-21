@@ -30,7 +30,7 @@ class AdminMenuController extends AbstractController
             ],
             [
                 'icon' => 'icon icon-clock2',
-                'location' => 'app_adminpanel_index',
+                'location' => 'app_admin_reservations',
                 'title' => 'admin.menu.reservations.list',
             ],
         ];
