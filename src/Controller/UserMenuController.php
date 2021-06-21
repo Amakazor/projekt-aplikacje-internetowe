@@ -15,7 +15,7 @@ class UserMenuController extends AbstractController
             ],
             [
                 'icon' => 'icon icon-clock2',
-                'location' => 'app_index_index',
+                'location' => 'app_user_reservations',
                 'title' => 'user.menu.reservations',
             ],
         ];

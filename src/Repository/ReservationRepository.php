@@ -239,4 +239,33 @@ class ReservationRepository extends ServiceEntityRepository
                 ->getResult();
         }
     }
+
+    /**
+     * @param Company $company
+     * @param int $id
+     * @return mixed
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function doesBelongToCompany(Company $company, int $id) {
+        return $this->createQueryBuilder('reservation')
+            ->join('reservation.user', 'user')
+            ->andWhere('user.company = :val')
+            ->setParameter('val', $company)
+            ->andWhere('reservation.id = :id')
+            ->setParameter('id', $id)
+            ->select('count(reservation.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    public function removeCompanyReservation(int $id)
+    {
+        return $this->createQueryBuilder('reservation')
+            ->andWhere('reservation.id = :id')
+            ->setParameter('id', $id)
+            ->delete()
+            ->getQuery()
+            ->getResult();
+    }
 }

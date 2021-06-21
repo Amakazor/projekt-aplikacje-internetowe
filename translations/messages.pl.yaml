@@ -77,6 +77,8 @@ admin:
       action: Akcje
 
 user:
+  reservations:
+    title: Moje rezerwacje
   data:
     title: Moje dane
     subtitle: Dane użytkownika
@@ -124,6 +126,7 @@ reservations:
     end: Koniec
     car: Auto
     user: Pracownik
+    action: Akcje
 
 email:
   verifyEmail: Potwierdź swój adres email
@@ -174,6 +177,9 @@ api:
       create:
         success: Pomyślnie dokonano rezerwacji.
         error: Nie udało się dokonać rezerwacji, auto jest niedostępne w tym terminie.
+      delete:
+        success: "Pomyślnie usunięto rezerwację o ID "
+        error: "Nie udało się usunąć rezerwacji o ID "
     password:
       change:
         success: Hasło zostało zmienione pomyślnie.

@@ -1,7 +1,11 @@
 <?php
 namespace App\Controller;
 
+use App\Repository\CarRepository;
+use App\Repository\ReservationRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -109,5 +113,106 @@ class UserController extends AbstractController
         }
 
         return $this->render('userData.html.twig', ['user' => $user, 'form' => $form->createView()]);
+    }
+
+    /**
+     * @Route("/user/reservations", name="app_user_reservations")
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param ReservationRepository $reservationRepository
+     * @return Response
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function userReservations(Request $request, UserRepository $userRepository, ReservationRepository $reservationRepository): Response
+    {
+        $fields = [
+            [
+                'name' => 'start',
+                'sortable' => TRUE,
+                'sort' => 'reservation.start',
+                'width' => '10%'
+            ],
+            [
+                'name' => 'end',
+                'sortable' => TRUE,
+                'sort' => 'reservation.end',
+                'width' => '10%'
+            ],
+            [
+                'name' => 'car',
+                'sortable' => TRUE,
+                'sort' => 'car.brand',
+                'width' => '10%'
+            ],
+            [
+                'name' => 'action',
+                'sortable' => FALSE,
+                'width' => '10%'
+            ]
+        ];
+
+        $per_page = (int)($request->query->get('per_page') ?? 5);
+        $page = (int)($request->query->get('page') ?? 1);
+        $order = $request->query->get('order') ?? 'id';
+        $order_direction = $request->query->get('direction') ?? 'ASC';
+
+        $user = $userRepository->findOneBy(['username' => $this->getUser()->getUsername()]);
+        $company = $user->getCompany();
+        $pages = ceil((int)$reservationRepository->getCountWithUserAndCar($company, null, $user) / $per_page);
+
+        $get_name = function($value) {return $value['name'];};
+        $get_sort = function($value) {return !empty($value['sort']) ? $value['sort'] : null;};
+        if (!in_array($order, array_map($get_name, $fields)) && !in_array($order, array_map($get_sort, $fields))) $order = 'reservation.start';
+        if (!in_array($order_direction, ['ASC', 'DESC'])) $order_direction = 'ASC';
+        $page = max(1, min($page, $pages));
+
+        $reservations = [];
+        foreach ($reservationRepository->reservationPagination($company, $per_page, $page, $order, $order_direction, null, $user) as $reservationData) {
+            $reservations[] = [
+                'id' => $reservationData->getId(),
+                'start' => $reservationData->getStart()->format('Y-m-d H:i'),
+                'end' => $reservationData->getEnd()->format('Y-m-d H:i'),
+                'car' => $reservationData->getCar()->getBrand() . ' ' . $reservationData->getCar()->getModel(),
+            ];
+        }
+
+        return $this->render('userReservations.html.twig', ['fields' => $fields, 'reservations' => $reservations, 'current_order' => $order, 'current_direction' => $order_direction, 'page' => $page, 'pages' => $pages, 'per_page' => $per_page]);
+    }
+
+    /**
+     * @Route("user/reservations/delete/{id}", methods={"DELETE"}, name="app_user_reservations_delete")
+     * @param int $id
+     * @param ReservationRepository $reservationRepository
+     * @param UserRepository $userRepository
+     * @param TranslatorInterface $translator
+     * @return Response
+     */
+    public function delete_reservation(int $id, ReservationRepository $reservationRepository, UserRepository $userRepository, TranslatorInterface $translator) : Response
+    {
+        $status = FALSE;
+        try {
+            if ($reservationRepository->doesBelongToCompany($userRepository->findOneBy(['username' => $this->getUser()->getUsername()])->getCompany(), $id)) {
+                $status = $reservationRepository->removeCompanyReservation($id);
+            }
+        } catch (NoResultException $e) {
+            $status = FALSE;
+        } catch (NonUniqueResultException $e) {
+            $status = FALSE;
+        }
+
+        if ($status) {
+            $this->addFlash(
+                'success',
+                $translator->trans('api.message.reservation.delete.success') . $id
+            );
+        } else {
+            $this->addFlash(
+                'error',
+                $translator->trans('api.message.reservation.delete.error') . $id
+            );
+        }
+
+        return new Response($status);
     }
 }
