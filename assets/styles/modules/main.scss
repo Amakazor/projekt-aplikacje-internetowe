@@ -1,37 +1,39 @@
-.mainpage h1.title /////////////// to do !!!
-{
-font-weight: 600;
-font-size: 4.5rem;
-line-height: 1.1;
-text-align: center;
-margin-bottom: 5rem;
-margin-top: 25rem;
-margin-left: 5rem;
-margin-right: 5rem;
-padding-bottom: 4rem;
-position: absolute;
-color: var(--color-primary);
-background-color: var(--color-white);
-background-size: auto;
-background-position: center;
-//background-image:none;
-//color: transparent;
-//text-shadow: 0 0 5px rgba(27, 31, 34, 0.363);
+.mainpage {
+    width: 100%;
+
+    & > .title {
+        &__container {
+            aspect-ratio: 1920 / 750;
+            width: 100%;
+            position: relative;
+
+        }
+    }
 }
-.mainpage .blur{
-     
-    //filter: blur(1px);
+
+.mainpage h1.title
+{
+    font-weight: 600;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    text-align: center;
+    margin : 25rem 5rem 5rem;
+    padding-bottom: 4rem;
+    position: absolute;
+    color: var(--color-white);
 }
   
 .mainpage .titleimg
 {
     margin-bottom: 4rem;
     box-sizing: border-box;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 100%;
-    display: flex;
+    display: block;
+    width: 100%;
+
+    &::after {
+        display: block;
+        content: ''
+    }
     
 }
 .section-about .about-header .about-title {

@@ -82,6 +82,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: block;
 }
 
+a {
+    text-decoration: none;
+}
+
 [type='checkbox'],
 [type='radio'] {
     box-sizing: border-box;
