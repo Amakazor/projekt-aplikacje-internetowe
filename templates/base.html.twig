@@ -5,7 +5,7 @@
         {{ include('flash.html.twig') }}
         <header>
             {% block menu %}
-                    {{ render(controller('App\\Controller\\MenuController:menu')) }}
+                {{ render(controller('App\\Controller\\MenuController:menu')) }}
             {% endblock %}
         </header>
         <main>            
@@ -112,7 +112,7 @@
                                         <li class="li_free"> ❌ Pomoc techniczna</li>
                                         <li class="li_free"> ❌ Pomoc telefoniczna 24/7</li>
                                     <h2>Darmowe</h2>
-                                    <button class="button_free" type="submit" ><a class="a_free" href="/symfony24/public/index.php/register"> Wypróbuj już teraz</a></button>
+                                    <button class="button_free" type="submit" ><a class="a_free" href="{{ path('app_register') }}"> Wypróbuj już teraz</a></button>
                                 </div>
                                 <div class="services_premium">
                                     <h3 class="h3_premium">PREMIUM</h3>
