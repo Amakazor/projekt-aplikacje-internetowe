@@ -8,7 +8,11 @@ class MenuController extends AbstractController
 {
     public function menu(TranslatorInterface $translator) : Response
     {
-        $menu_items = [];
+        $menu_items = [[
+            'location' => 'app_index_index',
+            'title' => $translator->trans('menu.home'),
+            'type' => 'underlined',
+        ]];
 
         $user = $this->getUser();
 
