@@ -13,6 +13,7 @@ import './fonts/icomoon.scss'
 import './styles/global/font.scss';
 import './styles/global/body.scss';
 import './styles/global/header.scss';
+import './styles/global/footer.scss';
 
 import './styles/variables/colors.scss';
 import './styles/variables/transition.scss';
@@ -24,6 +25,7 @@ import './styles/components/stylizedUpload.scss';
 import './styles/components/stylizedNumber.scss';
 import './styles/components/stylizedDate.scss';
 import './styles/components/adminForm.scss';
+import './styles/components/container.scss';
 
 import './styles/modules/menu.scss';
 import './styles/modules/main.scss';
@@ -32,13 +34,13 @@ import './styles/modules/text.scss';
 import './styles/modules/Signin.scss';
 import './styles/modules/adminMenu.scss';
 import './styles/modules/AdminSortableList.scss';
-import './styles/modules/adminSection.scss';
 import './styles/modules/flashes.scss';
 import './styles/modules/stats.scss';
 import './styles/modules/registerform.scss';
 import './styles/modules/reserve.scss';
 import './styles/modules/reservations.scss';
 import './styles/modules/userData.scss';
+import './styles/modules/services.scss';
 
 import './js/handlers/hamburgerHandler.js';
 import './js/component/stylizedSelect.js';

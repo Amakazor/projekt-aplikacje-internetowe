@@ -56,7 +56,10 @@ class ReservationController extends AbstractController
                 ]
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'form.search'
+                'label' => 'form.search',
+                'attr' => [
+                    'class' => 'button button--primary'
+                ]
             ])
             ->getForm();
 

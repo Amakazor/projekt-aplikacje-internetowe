@@ -29,7 +29,10 @@ class RegisterCompanyType extends AbstractType
                 'label' => 'security.register.company.identifier'
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'form.register'
+                'label' => 'form.register',
+                'attr' => [
+                    'class' => 'button button--primary'
+                ]
             ]);
     }
 

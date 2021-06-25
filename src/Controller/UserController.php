@@ -78,7 +78,10 @@ class UserController extends AbstractController
         ]) -> add('new_password_repeat', PasswordType::class, [
             'label' => 'user.data.password.repeat'
         ]) ->add('save', SubmitType::class, [
-            'label' => 'form.save'
+            'label' => 'form.save',
+            'attr' => [
+                'class' => 'button button--primary'
+            ]
         ]) -> getForm();
 
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($translator, $passwordEncoder, $user) {

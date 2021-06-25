@@ -4,8 +4,8 @@
 {% block main %}
     {{ render(controller('App\\Controller\\AdminMenuController:menu')) }}
     {% block adminContent %}
-        <div class="admin_container">
-            <section class="admin_section">
+        <div class="container container--admin">
+            <section class="section">
                 <h1>{{ t('admin.title')|trans }}</h1>
                 <div class="stats">
                     {% for stat in stats %}

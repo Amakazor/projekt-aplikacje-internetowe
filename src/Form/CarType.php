@@ -72,7 +72,10 @@ class CarType extends AbstractType
                 ]
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'form.save'
+                'label' => 'form.save',
+                'attr' => [
+                    'class' => 'button button--primary'
+                ]
             ]);
     }
 

@@ -1,8 +1,8 @@
 {% extends "base.html.twig" %}
 
 {% block main %}
-    <div class="admin_container">
-        <section class="admin_section">
+    <div class="container container--admin">
+        <section class="section">
             <h1>{{ t('reservations.title')|trans }}</h1>
             {% include 'pagination.html.twig' with {'base_link': (path('app_reservations') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page ~ '&user=' ~ (currentUser|default ? currentUser.fullname : '') ~ '&car=' ~ (currentCar|default ? currentCar.fullname : ''))} %}
             <div class="reservations__sorts">

@@ -3,4 +3,11 @@ header {
     flex-direction: row;
 
     border-bottom: var(--borderStandard) var(--color-primary);
+
+    position: fixed;
+    top: 0;
+
+    z-index: 10;
+    background: var(--color-white);
+    width: 100%;
 }

@@ -1,0 +1,144 @@
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    color:var(--color-black);
+    width: 100%;
+    margin-bottom: 6.25rem;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #5D88FA;
+    }
+
+    &__title {
+        font-size: 3rem;
+        border-bottom: var(--borderStandard) var(--color-primary);
+        height: 10rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1300px) {
+            font-size: 2.5rem;
+            height: 7rem;
+        }
+    }
+
+    &__list {
+        list-style-type:none;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        @media (max-width: 1000px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: stretch;
+            padding: 1.5rem 5rem;
+        }
+
+        @media (max-width: 550px) {
+            padding: 1.5rem;
+        }
+    }
+
+    &__element {
+        font-size: 1.25rem;
+        font-weight: 600;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media (max-width: 1550px) {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 1300px) {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1100px) {
+            font-size: 0.6rem;
+        }
+
+        @media (max-width: 1000px) {
+            width: 50%;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 360px) {
+            font-size: 0.6rem;
+        }
+    }
+
+    &__icon {
+        display: block;
+        font-size: 2rem;
+        padding-right: 1rem;
+
+        @media (max-width: 1300px) {
+            font-size: 1.5rem;
+            padding-right: .5rem;
+        }
+    }
+
+    &__price{
+        font-size: 2.25rem;
+        height: 8rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1300px) {
+            font-size: 1.75rem;
+            height: 6rem;
+        }
+
+        @media (max-width: 360px) {
+            font-size: 1.5rem;
+            height: 5rem;
+        }
+    }
+
+    &__buttonContainer {
+        padding : 0 2.5rem 2.5rem;
+        width: 100%;
+
+        @media (max-width: 420px) {
+            padding : 0 1.5rem 1.5rem;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        text-align: center;
+    }
+}

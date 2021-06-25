@@ -28,7 +28,10 @@ class UserAdminType extends AbstractType
                 'label' => 'admin.users.list.email'
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'form.save'
+                'label' => 'form.save',
+                'attr' => [
+                    'class' => 'button button--primary'
+                ]
             ]);
     }
 

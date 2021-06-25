@@ -1,13 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block main %}
-    <div class="admin_container reserve">
-        <section class="admin_section">
+    <div class="container container--admin reserve">
+        <section class="section">
             <h1>{{ t('reservation.title')|trans }}</h1>
             {{ form(form, {'attr': {'class': 'adminForm reserveForm'}}) }}
         </section>
         {% if formValid %}
-            <section class="admin_section">
+            <section class="section">
                 <h2>
                     {% if cars|length > 0 %}
                         {{ t('reservation.found')|trans ~ ' ' ~  cars|length}}

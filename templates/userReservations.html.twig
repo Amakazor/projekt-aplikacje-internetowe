@@ -1,8 +1,8 @@
 {% extends "user.html.twig" %}
 
 {% block userContent %}
-    <div class="admin_container">
-        <section class="admin_section">
+    <div class="container container--admin">
+        <section class="section">
             <h1>{{ t('user.reservations.title')|trans }}</h1>
             {% include 'pagination.html.twig' with {'base_link': (path('app_user_reservations') ~ '?order=' ~ current_order ~ '&direction=' ~ current_direction ~ '&per_page=' ~ per_page) } %}
             {% include 'sortableList.html.twig' with {'translation_base' : 'reservations.list', 'data': reservations, 'location': 'app_user_reservations', 'edit': false} %}

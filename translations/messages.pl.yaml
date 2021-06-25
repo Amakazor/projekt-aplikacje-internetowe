@@ -1,5 +1,46 @@
 home:
   welcome: Rezerwacja pojazdów - Cztery Kółka®
+  header: "System rezerwacji pojazdów - Cztery Kółka"
+  prices: Skorzystaj z naszych usług
+
+services:
+  free:
+    title: FREE
+    price: Darmowe
+    button: Wypróbuj już teraz
+    list:
+      cars: 20 aut
+      users: 100 użytkowników
+      admin: Przejrzysty panel administracyjny
+      system: System rezerwacji pojazdów
+      fast: Błyskawiczne dodawanie aut
+      tech: Pomoc techniczna
+      phone: Pomoc telefoniczna 24/7
+  premium:
+    title: PREMIUM
+    price: 2500 PLN BRUTTO
+    button: WKRÓTCE DOSTĘPNE
+    list:
+      cars: 50 aut
+      users: 300 użytkowników
+      admin: Przejrzysty panel administracyjny
+      system: System rezerwacji pojazdów
+      fast: Błyskawiczne dodawanie aut
+      tech: Pomoc techniczna
+      phone: Pomoc telefoniczna 24/7
+  enterprise:
+    title: ENTERPRISE
+    price: 5000 PLN BRUTTO
+    button: WKRÓTCE DOSTĘPNE
+    list:
+      cars: 250 aut
+      users: 1000 użytkowników
+      admin: Przejrzysty panel administracyjny
+      system: System rezerwacji pojazdów
+      fast: Błyskawiczne dodawanie aut
+      tech: Pomoc techniczna
+      phone: Pomoc telefoniczna 24/7
+
 
 security:
   goRegister: Nie masz konta? Zarejestruj się

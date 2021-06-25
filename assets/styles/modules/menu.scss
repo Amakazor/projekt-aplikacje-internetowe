@@ -7,6 +7,10 @@
 
     position: relative;
 
+    @media (max-width: 800px) {
+        justify-content: flex-end;
+    }
+
     .menuHamburgerButton {
         background: none;
         border: none;
@@ -47,7 +51,7 @@
             bottom: 0.5rem;
         }
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 801px) {
             display: none;
         }
     }
@@ -64,7 +68,22 @@
 
         background: var(--color-white);
 
-        @media screen and (max-width: 767px) {
+        @media ( max-width: 1200px) and (min-width: 800px) {
+            gap: 0rem;
+
+            .button {
+                font-size: .8rem;
+            }
+        }
+
+        @media (max-width: 950px) and (min-width: 800px) {
+            .button {
+                padding: 0.75rem;
+            }
+        }
+
+
+        @media (max-width: 800px) {
             flex-direction: column;
             width: 100%;
 
@@ -88,14 +107,14 @@
 
     &.menuOpen {
         .menu {
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 800px) {
                 transform: scaleY(1);
                 transition: transform var(--transitionStandard);
             }
         }
 
         .menuItem {
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 800px) {
                 opacity: 1;
                 transition: opacity var(--transitionStandard) var(--transitionStandard);
             }
@@ -117,70 +136,10 @@
     }
 
     .menuItem {
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 800px) {
             opacity: 0;
             
             transition: opacity var(--transitionStandard);
-        }
-    }
-
-    .menuLink {
-        display: block;
-        padding: .75rem 1.25rem;
-
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 600;
-
-        color: var(--color-primary);
-        background: var(--color-white);
-        
-        transition: color var(--transitionStandard), background var(--transitionStandard);
-
-        cursor: pointer;
-
-        outline: none;
-
-        &--underlined {
-            position: relative;
-
-            &::after {
-                display: block;
-                content: "";
-                transform-origin: left;
-                width: 80%;
-                position: absolute;
-                height: 0.125rem;
-                left: 10%;
-                top: 100%;
-                background: var(--color-primary);
-                transform: scaleX(0);
-                transition: var(--transitionStandard);
-            }
-
-            &:hover,
-            &:focus,
-            &:focus-within {
-                &::after {
-                    @media screen and (min-width: 768px) {
-                        transform: scaleX(1);
-                    }
-                }
-            }
-        }
-
-        &--bordered {
-            @media screen and (min-width: 768px) {
-                border-radius: var(--borderRadiusStandard);
-                border: var(--borderStandard) var(--color-primary);
-            }
-
-            &:hover,
-            &:focus,
-            &:focus-within {
-                color: var(--color-white);
-                background: var(--color-primary);
-            }
         }
     }
 }
