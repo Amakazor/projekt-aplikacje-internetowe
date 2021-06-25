@@ -17,4 +17,11 @@
     &--centered {
         align-items: center;
     }
+
+    & > h1 {
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 2rem;
+    }
 }

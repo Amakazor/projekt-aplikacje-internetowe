@@ -1,7 +1,20 @@
 home:
   welcome: Rezerwacja pojazdów - Cztery Kółka®
   header: "System rezerwacji pojazdów - Cztery Kółka"
+  aboutUs: O nas
+  promo: Zobacz jakie korzyści daje Ci nasz system
   prices: Skorzystaj z naszych usług
+  about: System rezerwacji pojazdów to najnowocześniejsze rozwiązanie umożliwiające rezerwację pojazdów służbowych przez pracowników Twojej firmy. Nasze rozwiązanie pozwoli Ci uniknąć sytuacji, gdy wielu z Twoich pracowników jednocześnie potrzebuje skorzystać z jednego z firmowych aut, dając im prosty i przejrzysty sposób na rezerwację pojazdu na długo przed tym, gdy jest on potrzebny. Sprawia, że unikniesz niepotrzebnych konfliktów oraz komplikacji transportowych w swojej firmie.
+  tryNow: Wypróbuj już teraz
+
+footer:
+  authors: Copyright&copy; by Arkadiusz Wrzawiński, Kacper Halamus, Marek Zieleziński, Patryk Wysocki
+
+promo:
+  easy: Szybka i prosta rezerwacja
+  good: Przejrzysty interfejs
+  user: Intuicyjne zarządzanie użytkownikami
+  fast: Błyskawiczne dodawnie pojazdów
 
 services:
   free:

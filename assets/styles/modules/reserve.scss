@@ -32,6 +32,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 
     color: var(--color-black);
 
@@ -51,6 +52,7 @@
         padding-top: .5rem;
         font-size: 1.5rem;
         font-weight: 700;
+        text-align: center;
     }
 
     &__information {
@@ -95,6 +97,10 @@
             background: var(--color-white);
             color: var(--color-primary);
         }
+    }
+
+    &__description {
+        text-align: center;
     }
 
     &__label {

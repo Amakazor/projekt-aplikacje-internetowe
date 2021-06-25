@@ -10,6 +10,26 @@ class IndexController extends AbstractController
      * @Route("/")
      */
     public function index(): Response {
+        $promo = [
+            [
+                'title' => 'promo.easy',
+                'asset' => 'build/images/promo1.png',
+                'type' => 'normal'
+            ], [
+                'title' => 'promo.good',
+                'asset' => 'build/images/promo2.png',
+                'type' => 'reversed'
+            ], [
+                'title' => 'promo.user',
+                'asset' => 'build/images/promo3.png',
+                'type' => 'normal'
+            ], [
+                'title' => 'promo.fast',
+                'asset' => 'build/images/promo4.png',
+                'type' => 'reversed'
+            ]
+        ];
+
         $services = [
             [
                 'title' => 'services.free.title',
@@ -110,6 +130,6 @@ class IndexController extends AbstractController
             ]
         ];
 
-        return $this->render('base.html.twig', ['services' => $services]);
+        return $this->render('base.html.twig', ['promo' => $promo, 'services' => $services]);
     }
 }

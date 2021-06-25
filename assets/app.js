@@ -26,6 +26,7 @@ import './styles/components/stylizedNumber.scss';
 import './styles/components/stylizedDate.scss';
 import './styles/components/adminForm.scss';
 import './styles/components/container.scss';
+import './styles/components/promo.scss';
 
 import './styles/modules/menu.scss';
 import './styles/modules/main.scss';

@@ -18,76 +18,23 @@
 
                     <div class="container">
                         <section class="section section--centered">
-                            <h2 class="home__header">
-                                O nas
-                            </h2>
-                            <div class="home__text">
-                                System rezerwacji pojazdów to najnowocześniejsze rozwiązanie umożliwiające rezerwację pojazdów służbowych przez pracowników Twojej firmy. Nasze rozwiązanie pozwoli Ci uniknąć sytuacji, gdy wielu z Twoich pracowników jednocześnie potrzebuje skorzystać z jednego z firmowych aut, dając im prosty i przejrzysty sposób na rezerwację pojazdu na długo przed tym, gdy jest on potrzebny. Sprawia, że unikniesz niepotrzebnych konfliktów oraz komplikacji transportowych w swojej firmie.
-                            </div>
-                            <a class="button button--callToAction home__button" href="{{ path('app_register') }}"> Wypróbuj już teraz</a>
+                            <h2 class="home__header">{{ t('home.aboutUs')|trans }}</h2>
+                            <div class="home__text">{{ t('home.about')|trans }}</div>
+                            <a class="button button--callToAction home__button" href="{{ path('app_register') }}">{{ t('home.tryNow')|trans }}</a>
                         </section>
 
-                        <section class="section section-about section-about-body">
-                                <div class="about-header">
-                                    <h2 class="home__header">
-                                        Każda wersja nadwozia!
-                                    </h2>
-                                    <div class="about-excerpt">
-                                    W zakresie usług obsługujemy każdy rodzaj aut - małe, miejskie, duże SUV'y, rodzinne kombi lub auta dostawcze.
+                        <section class="section section--centered">
+                            <h2 class="home__header">{{ t('home.promo')|trans }}</h2>
+                            <div class="promo">
+                                {% for element in promo %}
+                                    <div class="promo__element promo__element--{{ element.type }}">
+                                        <div class="promo__title">{{ t(element.title)|trans }}</div>
+                                        <img src="{{ asset(element.asset) }}" alt="{{ t(element.title)|trans }}" class="promo__image">
                                     </div>
-                                </div>
-                                <div class="about-body">
-                                    <img src="{{asset('build/images/body-types.png')}}" title="giulia" alt="giulia">
-                                </div>
-                        </section>
-
-                        <section class="section">
-                            <div class="row">
-                                <div class="col-12 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
-                                    <div class="row">
-                                        <div class="col-12 col-lg-6">
-                                            <div class="about-promo promo-first">
-                                                <div class="promo-header">
-                                                    <div class="promo-badge">Nowość!</div>
-                                                    <div class="promo-title">
-                                                        Dostęp do najlepszych aut elektrycznych!
-                                                    </div>
-                                                </div>
-                                                <div class="promo-image">
-                                                    <img src="{{asset('build/images/promo-ev.png')}}" title="giulia" alt="giulia">
-                                                </div>
-                                                <div class="promo-footer">
-                                                    <div class="promo-content">
-                                                        Zebraliśmy najbardziej opłacalne samochody
-                                                        elektryczne w jednym miejscu!
-                                                                </br>Ogranicz swoje wydatki związane z paliwem i dbaj o środowisko.
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-6">
-                                            <div class="about-promo">
-                                                <div class="promo-header">
-                                                    <div class="promo-badge">Nowość!</div>
-                                                    <div class="promo-title">
-                                                        Odbierasz swoje auto pod domem!
-                                                    </div>
-                                                </div>
-                                                <div class="promo-image">
-                                                    <img src="{{asset('build/images/promo-delivery.png')}}" title="giulia" alt="giulia">
-                                                </div>
-                                                <div class="promo-footer">
-                                                    <div class="promo-content">
-                                                        Samochód możemy dostarczyć pod Twój dom.</br> Usługę dopasujemy indywidualnie pod preferencje klienta.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </section>
+
                         <section class="section">
                             <h2 class="home__header">{{ t('home.prices')|trans }}</h2>
                             <div class="services">
@@ -116,9 +63,7 @@
             {% endblock %}
         </main>
         {% block footer %}
-            <footer class="footer">
-                Copyright&copy; by Arkadiusz Wrzawiński, Kacper Halamus, Marek Zieleziński, Patryk Wysocki
-            </footer>
+            <footer class="footer">{{ t('footer.authors')|trans|raw }}</footer>
         {% endblock %}
     </body>
 </html>

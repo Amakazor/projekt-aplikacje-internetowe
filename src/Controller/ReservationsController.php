@@ -70,7 +70,7 @@ class ReservationsController extends AbstractController
 
         $get_name = function($value) {return $value['name'];};
         $get_sort = function($value) {return !empty($value['sort']) ? $value['sort'] : null;};
-        if (!in_array($order, array_map($get_name, $fields)) && !in_array($order, array_map($get_sort, $fields))) $order = 'start';
+        if (!in_array($order, array_map($get_name, $fields)) && !in_array($order, array_map($get_sort, $fields))) $order = 'reservation.start';
         if (!in_array($order_direction, ['ASC', 'DESC'])) $order_direction = 'ASC';
         $page = max(1, min($page, $pages));
 
