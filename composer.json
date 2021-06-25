@@ -45,7 +45,8 @@
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
         "symfonycasts/verify-email-bundle": "^1.5",
-        "vich/uploader-bundle": "^1.17"
+        "vich/uploader-bundle": "^1.17",
+        "symfony/web-profiler-bundle": "^5.2"
     },
     "require-dev": {
         "doctrine/data-fixtures": "^1.5",
@@ -56,8 +57,7 @@
         "symfony/maker-bundle": "^1.31",
         "symfony/phpunit-bridge": "^5.2",
         "symfony/stopwatch": "^5.2",
-        "symfony/var-dumper": "^5.2",
-        "symfony/web-profiler-bundle": "^5.2"
+        "symfony/var-dumper": "^5.2"
     },
     "config": {
         "optimize-autoloader": true,
