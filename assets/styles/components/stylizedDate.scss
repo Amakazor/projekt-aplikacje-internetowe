@@ -9,6 +9,19 @@
 
     transition: opacity var(--transitionStandard);
 
+    @media (max-width: 1500px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        width: 25rem;
+        max-width: 90%;
+
+    }
+
     &:not(.active) {
         opacity: 0;
         pointer-events: none;
@@ -16,6 +29,10 @@
 
     &__wrapper {
         position: relative;
+
+        @media (max-width: 1500px) {
+            position: static;
+        }
     }
 
     &__formatTimeWrapper {
@@ -25,6 +42,12 @@
 
         min-width: 20rem;
         border-right: var(--borderStandard) var(--color-primary);
+
+        @media (max-width: 800px) {
+            border-bottom: var(--borderStandard) var(--color-primary);
+            border-right: none;
+            min-width: unset;
+        }
     }
 
     &__formattedDate {
@@ -36,6 +59,10 @@
         font-size: 1.2rem;
         background: var(--color-primary);
         color: var(--color-white);
+
+        @media (max-width: 800px) {
+            height: 3rem;
+        }
     }
 
     &__timeWrapper {
@@ -90,6 +117,12 @@
         flex-direction: row;
         justify-content: space-evenly;
         gap: 2rem;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
     }
 
     &__weekLabels {
@@ -103,6 +136,10 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: .5rem;
+
+        @media (max-width: 800px) {
+            gap: .2rem;
+        }
     }
 
     &__day {

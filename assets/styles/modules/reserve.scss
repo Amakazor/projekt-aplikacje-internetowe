@@ -8,9 +8,13 @@
         & > * {
             justify-content: flex-end;
             flex-grow: 1;
+
+            @media (max-width: 470px) {
+                width: 100%;
+            }
         }
 
-        & button {
+        & button:not(.stylized_number__decrement):not(.stylized_number__increment):not(.stylized_date__day ) {
             padding: 0 1rem;
         }
 
@@ -36,6 +40,14 @@
 
     color: var(--color-black);
 
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 700px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     & * {
         color: inherit;
     }
@@ -53,6 +65,10 @@
         font-size: 1.5rem;
         font-weight: 700;
         text-align: center;
+
+        @media (max-width: 700px) {
+            font-size: 1.2rem;
+        }
     }
 
     &__information {
