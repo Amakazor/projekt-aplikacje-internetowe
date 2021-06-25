@@ -38,7 +38,7 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, TranslatorInterface $translator, UserCreationMailer $userCreationMailer): Response
     {
-        if ($this->isGranted('ROLE_USER')) return $this->redirectToRoute('app_index_index');
+        if ($this->isGranted('ROLE_USER')) return $this->redirectToRoute('app_user_data');
 
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
