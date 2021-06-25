@@ -1,4 +1,4 @@
-import { StylizedNumber } from 'StylizedNumber.js';
+import { StylizedNumber } from './stylizedNumber.js';
 
 class StylizedDate {
     element;
