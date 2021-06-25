@@ -162,6 +162,7 @@ class AdminCarsController extends AbstractController
 
             if ($form->isValid()) {
                 $car = $form->getData();
+                $car->setCompany($userRepository->findOneBy(['username' => $this->getUser()->getUsername()])->getCompany());
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($car);
                 $entityManager->flush();
@@ -174,14 +175,13 @@ class AdminCarsController extends AbstractController
                     'success',
                     $id == 0 ? $translator->trans('api.message.cars.add.success') . $id : $translator->trans('api.message.cars.change.success') . $id
                 );
+                return $this->redirectToRoute('app_admin_cars');
             } else {
                 $this->addFlash(
                     'error',
                     $id == 0 ? $translator->trans('api.message.cars.add.error') . $id : $translator->trans('api.message.cars.change.error') . $id
                 );
             }
-
-            return $this->redirectToRoute('app_admin_cars');
         }
 
         return $this->render('adminCar.html.twig', [
