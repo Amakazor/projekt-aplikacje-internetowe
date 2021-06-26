@@ -31,7 +31,7 @@
             }
         }
 
-        &:not(&--header) {
+        &:not(sortable_list__row--header) {
             border-bottom: var(--borderStandard) var(--color-border);
             padding: 2rem 0;
         }
@@ -62,7 +62,7 @@
 
         }
 
-        &:not(&--header)
+        &:not(sortable_list__field--header)
         {
             text-align: left;
             @media (max-width: 1350px) {
