@@ -67,13 +67,13 @@ class RegistrationController extends AbstractController
             if ($status) {
                 $this->addFlash(
                     'success',
-                    'api.message.register.success'
+                    $translator->trans('api.message.register.success')
                 );
                 return $this->redirectToRoute('app_index_index');
             } else {
                 $this->addFlash(
                     'error',
-                    'api.message.register.error'
+                    $translator->trans('api.message.register.error')
                 );
             }
         }
